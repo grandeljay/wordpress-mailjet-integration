@@ -23,3 +23,5 @@ define( 'GJMJ4WP', __DIR__ );
 
 gjmj4wp_auto_include( GJMJ4WP . '/inc/functions' );
 gjmj4wp_auto_include( GJMJ4WP . '/inc/shortcodes' );
+gjmj4wp_auto_include( GJMJ4WP . '/inc/hooks' );
+gjmj4wp_auto_include( GJMJ4WP . '/inc/ajax' );
