@@ -11,6 +11,8 @@ This plugin isn't meant to be user friendly and have a fancy user inferface. It 
     composer install --no-dev
     ```
 
+	or just `composer install` if you plan to contribute.
+
 2. Setup configuration
 
     Copy `/inc/config-example.php` to `/inc/config.php` and configure it (i. e. add your [Mailjet API key and secret](https://app.mailjet.com/account/api_keys)).
