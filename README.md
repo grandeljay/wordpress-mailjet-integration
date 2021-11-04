@@ -35,4 +35,4 @@ We are using the WordPress-Core and WordPress-Extra coding standard.
 
 ## Questions?
 
-Check out the [wiki](grandeljay-mailjet-for-wordpress/wiki) or open an [issue](grandeljay-mailjet-for-wordpress/issues).
+Check out the [wiki](https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/wiki) or open an [issue](https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/issues).
