@@ -8,16 +8,16 @@ This plugin isn't meant to be user friendly and have a fancy user inferface. It 
 1. Install dependencies
 
     ```
-    composer install
+    composer install --no-dev
     ```
 
 2. Setup configuration
 
-    Copy `/inc/config-example.php` to `/inc/config.php` and configure it (i. e. add your Mailjet API key and secret).
+    Copy `/inc/config-example.php` to `/inc/config.php` and configure it (i. e. add your [Mailjet API key and secret](https://app.mailjet.com/account/api_keys)).
 
-3. Add template
+3. Add a template
 
-    After you have created your transactional template,
+    After you have created your [transactional template](https://app.mailjet.com/templates/transactional),
 	add the confirmation link variable (`{{var:confirmationlink:""}}`) to it.
 
 4. Add shortcode
