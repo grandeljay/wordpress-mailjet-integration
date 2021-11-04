@@ -1,0 +1,4 @@
+*.code-workspace
+/.vscode
+/inc/config.php
+/vendor
