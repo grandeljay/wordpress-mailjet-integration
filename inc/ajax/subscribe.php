@@ -24,54 +24,10 @@ function gjmj4wp_ajax_subscribe() {
 	);
 
 	/**
-	 * Create new contact
-	 */
-
-	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
-	$contact_add_body = array(
-		'IsExcludedFromCampaigns' => 'true',
-		'Email'                   => $_POST['email'],
-	);
-
-	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
-	$contact_add = $mailjet->post(
-		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-		\Mailjet\Resources::$Contact,
-		array(
-			'body' => $contact_add_body,
-		)
-	);
-
-	// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
-	if ( $contact_add->success() ) {
-		/** Creating a contact has succeeded. */
-	} else {
-		/** Creating a contact has failed. */
-		$data = $contact_add->getData();
-
-		if ( $data ) {
-			echo wp_send_json_error( $data );
-		} else {
-			/**
-			 * Continue
-			 *
-			 * Maybe the contact already exists.
-			 */
-			/*
-			wp_send_json_error(
-				array(
-					'message' => __( 'Failure (unknown reason)', 'grandeljay-mailjet-for-wordpress' ),
-				),
-			);
-			*/
-		}
-	}
-
-	/**
 	 * Send confirmation mail
 	 */
-	$checksum = sha1( 'GJMJ4WP-' . $_POST['email'] );
-	$condirmation_link = rawurlencode( get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&checksum=' . $checksum );
+	$checksum          = sha1( 'GJMJ4WP-' . $_SERVER['DOCUMENT_ROOT'] . '-' . $_POST['email'] );
+	$condirmation_link = get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&gjmp4wp-checksum=' . $checksum;
 
 	$email_confirmation_body = array(
 		'Messages' => array(
@@ -89,7 +45,7 @@ function gjmj4wp_ajax_subscribe() {
 				'TemplateLanguage' => true,
 				'Subject'          => 'Confirm your email',
 				'Variables'        => array(
-					'confirmation-link' => $condirmation_link,
+					'confirmationlink' => $condirmation_link,
 				),
 			),
 		),

@@ -14,7 +14,7 @@ define( 'MJ4WP_API_KEY', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' );
 define( 'MJ4WP_API_SECRET', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' );
 
 /**
- * The Mailjet template ID to use to confirm user emails.
+ * Mailjet Template
  */
 define( 'MJ4WP_TEMPLATE_CONFIRMATION', 0 );
 

@@ -18,7 +18,7 @@ This plugin isn't meant to be user friendly and have a fancy user inferface. It 
 3. Add template
 
     After you have created your transactional template,
-	add the confirmation link variable (`{{var:confirmation-link:""}}`) to it.
+	add the confirmation link variable (`{{var:confirmationlink:""}}`) to it.
 
 4. Add shortcode
 
