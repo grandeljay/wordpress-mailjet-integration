@@ -3,7 +3,7 @@
 /**
  * config-example.php
  *
- * @author Jay Trees <j.trees@hybridsupply.de>
+ * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
 /**

@@ -3,7 +3,7 @@
 /**
  * Mailjet for WordPress
  *
- * @author Jay Trees <j.trees@hybridsupply.de>
+ * @author Jay Trees <github.jay@grandel.anonaddy.me>
  *
  * @wordpress-plugin
  * Plugin Name:       Mailjet for WordPress
