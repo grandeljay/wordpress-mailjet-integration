@@ -6,13 +6,19 @@ This plugin isn't meant to be user friendly and have a fancy user inferface. It 
 ## Getting started
 
 1. Install dependencies
+
     ```
     composer install
     ```
 
 2. Setup configuration
 
-    Copy `/inc/config-example.php` to `/inc/config.php` and add your mailjet API key and secret.
+    Copy `/inc/config-example.php` to `/inc/config.php` and configure it (i. e. add your Mailjet API key and secret).
+
+3. Add shortcode
+
+    Add `[mailjet_for_wordpress]` anywhere to see the subscription form.
+
 
 ## Contributing
 

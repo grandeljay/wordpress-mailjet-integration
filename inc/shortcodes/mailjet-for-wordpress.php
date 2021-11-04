@@ -7,7 +7,10 @@
  */
 
 function gjmj4wp_shortcode_mailjet_for_wordpress( $atts = array(), $content = '' ) {
-	$content .= 'Hello World';
+	$content .= '<form method="post">';
+	$content .= '<input type="email" placeholder="' . __( 'Email address', 'grandeljay-mailjet-for-wordpress' ) . '">';
+	$content .= '<input type="submit" value="' . __( 'Subscribe', 'grandeljay-mailjet-for-wordpress' ) . '">';
+	$content .= '</form>';
 
 	return $content;
 }
