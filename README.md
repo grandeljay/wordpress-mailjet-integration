@@ -3,6 +3,7 @@ A simple Mailjet integration for WordPress developers.
 
 This plugin isn't meant to be user friendly and have a fancy user inferface. It is for developers who want to integrate Mailjet into WordPress without all the bloat. It is aiming to be simple, uncomplicated and very customizable.
 
+
 ## Getting started
 
 1. Install dependencies
@@ -25,7 +26,13 @@ This plugin isn't meant to be user friendly and have a fancy user inferface. It 
 
     Add `[mailjet_for_wordpress]` anywhere to see the subscription form.
 
+
 ## Contributing
 
 ### Coding standard
 We are using the WordPress-Core and WordPress-Extra coding standard.
+
+
+## Questions?
+
+Check out the [wiki](grandeljay-mailjet-for-wordpress/wiki) or open an [issue](grandeljay-mailjet-for-wordpress/issues).
