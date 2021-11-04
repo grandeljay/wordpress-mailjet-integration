@@ -18,3 +18,7 @@
 require 'vendor/autoload.php';
 require 'inc/config.php';
 require 'inc/functions/auto-include.php';
+
+define( 'MJ4WP', __DIR__ );
+
+mj4wp_auto_include( MJ4WP . '/inc/functions' );

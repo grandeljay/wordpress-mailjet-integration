@@ -6,11 +6,12 @@
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
-function auto_include( string $directoy_to_include ) {
+function mj4wp_auto_include( string $directory_to_include ) {
 	foreach ( scandir( $directory_to_include ) as $filename ) {
-		$filepath = $directory_to_include . '/' . $filename;
+		$filepath      = str_replace( '\\', '/', $directory_to_include . '/' . $filename );
+		$filepath_this = str_replace( '\\', '/', __FILE__ );
 
-		if ( is_file( $filepath ) && __FILE__ !== $filepath ) {
+		if ( is_file( $filepath ) && $filepath_this !== $filepath ) {
 			require $filepath;
 		}
 	}
