@@ -1,7 +1,7 @@
 # Mailjet for WordPress
 A simple Mailjet integration for WordPress.
 
-This plugin isn't meant to be user friendly and have a fancy user inferface. It is for developers who want to integrate mailjet into WordPress without all the bloat. It is aiming to be simple, uncomplicated and very customizable.
+This plugin isn't meant to be user friendly and have a fancy user inferface. It is for developers who want to integrate Mailjet into WordPress without all the bloat. It is aiming to be simple, uncomplicated and very customizable.
 
 ## Getting started
 
