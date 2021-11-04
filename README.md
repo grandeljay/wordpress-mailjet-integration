@@ -15,10 +15,14 @@ This plugin isn't meant to be user friendly and have a fancy user inferface. It 
 
     Copy `/inc/config-example.php` to `/inc/config.php` and configure it (i. e. add your Mailjet API key and secret).
 
-3. Add shortcode
+3. Add template
+
+    After you have created your transactional template,
+	add the confirmation link variable (`{{var:confirmation-link:""}}`) to it.
+
+4. Add shortcode
 
     Add `[mailjet_for_wordpress]` anywhere to see the subscription form.
-
 
 ## Contributing
 

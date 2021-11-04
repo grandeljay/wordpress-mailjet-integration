@@ -70,6 +70,9 @@ function gjmj4wp_ajax_subscribe() {
 	/**
 	 * Send confirmation mail
 	 */
+	$checksum = sha1( 'GJMJ4WP-' . $_POST['email'] );
+	$condirmation_link = rawurlencode( get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&checksum=' . $checksum );
+
 	$email_confirmation_body = array(
 		'Messages' => array(
 			array(
@@ -85,6 +88,9 @@ function gjmj4wp_ajax_subscribe() {
 				'TemplateID'       => MJ4WP_TEMPLATE_CONFIRMATION,
 				'TemplateLanguage' => true,
 				'Subject'          => 'Confirm your email',
+				'Variables'        => array(
+					'confirmation-link' => $condirmation_link,
+				),
 			),
 		),
 	);
