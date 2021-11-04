@@ -17,3 +17,4 @@
 
 require 'vendor/autoload.php';
 require 'inc/config.php';
+require 'inc/functions/auto-include.php';
