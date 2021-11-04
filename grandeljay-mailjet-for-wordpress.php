@@ -12,13 +12,13 @@
  * Requires at least: 5.8
  * Requires PHP:      8.0
  * Author:            Jay Trees
- * Text Domain:       mailjet-for-wordpress
+ * Text Domain:       grandeljay-mailjet-for-wordpress
  */
 
 require 'vendor/autoload.php';
 require 'inc/config.php';
 require 'inc/functions/auto-include.php';
 
-define( 'MJ4WP', __DIR__ );
+define( 'GJMJ4WP', __DIR__ );
 
-mj4wp_auto_include( MJ4WP . '/inc/functions' );
+gjmj4wp_auto_include( GJMJ4WP . '/inc/functions' );
