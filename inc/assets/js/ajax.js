@@ -13,11 +13,20 @@ jQuery( document ).ready( function( $ ) {
 				_ajax_nonce: gjmj4wp.nonce,
 				action: 'gjmj4wp_ajax_subscribe',
 
-				// Data
-				fields: $( this ).serialize(),
+				email: $( '[name="email"]' ).val(),
 			},
 			function( response ) {
-				console.log( response );
+				if ( response.data.message ) {
+					$( '.gjmj4wp-response' ).html(
+						response.data.message
+					);
+				} else if ( response.data.ErrorMessage ) {
+					$( '.gjmj4wp-response' ).html(
+						response.data.ErrorInfo + '<br />' +
+						response.data.ErrorMessage + '<br />' +
+						response.data.StatusCode
+					);
+				}
 			}
 		);
 	} );

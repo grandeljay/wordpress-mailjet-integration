@@ -7,8 +7,9 @@
  */
 
 /**
- * The Mailjet API keys.
+ * Mailjet API
  */
+define( 'MJ4WP_API_VERSION', 'v3.1' );
 define( 'MJ4WP_API_KEY', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' );
 define( 'MJ4WP_API_SECRET', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' );
 
