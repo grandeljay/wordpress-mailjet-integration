@@ -1,7 +1,7 @@
 <?php
 
 /**
- * confirm-email.php
+ * wp
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
@@ -51,12 +51,13 @@ function gjmj4wp_confirm_email() {
 	// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
 	if ( $contact_add->success() ) {
 		/** Creating a contact has succeeded. */
-		echo 'Contact has been successfully added!<br />';
+		wp_safe_redirect( get_page_link( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS ) );
 	} else {
 		/** Creating a contact has failed. */
-		echo '<pre>';
-		var_dump( $contact_add->getData() );
-		echo '</pre>';
+		wp_safe_redirect( get_page_link( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE ) );
 	}
+	die();
 
 }
+
+add_action( 'wp', 'gjmj4wp_confirm_email' );
