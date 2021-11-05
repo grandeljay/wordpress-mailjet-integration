@@ -3,8 +3,6 @@
  */
 
 jQuery( document ).ready( function( $ ) {
-	console.log(gjmj4wp.language);
-
 	$( '.gjmj4wp-subscribe' ).submit( function( event ) {
 		event.preventDefault();
 
