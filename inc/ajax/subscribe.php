@@ -7,7 +7,7 @@
  */
 
 function gjmj4wp_ajax_subscribe() {
-	check_ajax_referer( 'gjmj4wp' );
+	check_ajax_referer( 'GJMJ4WP-AJAX' );
 
 	/**
 	 * Mailjet
@@ -25,9 +25,14 @@ function gjmj4wp_ajax_subscribe() {
 
 	/**
 	 * Send confirmation mail
+	 *
+	 * Using a checksum and an nonce is probably unnecessary.
+	 * However, I only noticed that after creating both and thought
+	 * it couldn't harm to keep both.
 	 */
 	$checksum          = sha1( 'GJMJ4WP-' . $_SERVER['DOCUMENT_ROOT'] . '-' . $_POST['email'] );
-	$condirmation_link = get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&gjmp4wp-checksum=' . $checksum;
+	$nonce             = wp_create_nonce( 'newsletter-subscribe' );
+	$condirmation_link = get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&gjmp4wp-checksum=' . $checksum . '&gjmp4wp-nonce=' . $nonce;
 
 	$email_confirmation_body = array(
 		'Messages' => array(

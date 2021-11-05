@@ -19,7 +19,7 @@ function gjmj4wp_wp_enqueue_script() {
 		'gjmj4wp',
 		array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
-			'nonce'    => wp_create_nonce( 'gjmj4wp' ),
+			'nonce'    => wp_create_nonce( 'GJMJ4WP-AJAX' ),
 			'language' => GJMJ4WP_LANGUAGE_DEFAULT,
 		)
 	);

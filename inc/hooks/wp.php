@@ -7,7 +7,10 @@
  */
 
 function gjmj4wp_confirm_email() {
-	if ( ! isset( $_GET['gjmp4wp-email'], $_GET['gjmp4wp-checksum'] ) ) {
+	if (
+		! isset( $_GET['gjmp4wp-email'], $_GET['gjmp4wp-checksum'], $_GET['gjmp4wp-nonce'] ) ||
+		false === wp_verify_nonce( $_GET['gjmp4wp-nonce'] )
+	) {
 		return;
 	}
 
@@ -36,7 +39,7 @@ function gjmj4wp_confirm_email() {
 
 	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$contact_add_body = array(
-		'Email' => $_GET['gjmp4wp-email'],
+		'Email'    => $_GET['gjmp4wp-email'],
 	);
 
 	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
