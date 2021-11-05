@@ -1,4 +1,9 @@
 *.code-workspace
 /.vscode
 /inc/config.php
-/vendor
+
+# dev dependencies
+vendor/bin
+vendor/dealerdirect/phpcodesniffer-composer-installer
+vendor/squizlabs/php_codesniffer
+vendor/wp-coding-standards/wpcs
