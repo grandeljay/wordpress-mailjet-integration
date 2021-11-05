@@ -37,11 +37,11 @@ function gjmj4wp_ajax_subscribe() {
 	$email_confirmation_body = array(
 		'Messages' => array(
 			array(
-				'From' => array(
+				'From'             => array(
 					'Email' => GJMJ4WP_TEMPLATE_FROM_EMAIL,
 					'Name'  => GJMJ4WP_TEMPLATE_FROM_NAME,
 				),
-				'To' => array(
+				'To'               => array(
 					array(
 						'Email' => $_POST['email'],
 					),
@@ -66,14 +66,22 @@ function gjmj4wp_ajax_subscribe() {
 	);
 
 	if ( $email_confirmation->success() ) {
-		/** Sending a confirmation email has succeeded. */
+		/**
+		 * Sending a confirmation email has succeeded
+		 */
+
+		// The output is indeed being escaped and therefore
+		// this error will be ignored.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo wp_send_json_success(
 			array(
-				'message' => __( 'Please confirm your email address.', 'grandeljay-mailjet-for-wordpress' ),
+				'message' => esc_html__( 'Please confirm your email address.', 'grandeljay-mailjet-for-wordpress' ),
 			),
 		);
 	} else {
-		/** Sending a confirmation email has failed. */
+		/**
+		 * Sending a confirmation email has failed
+		 */
 		echo wp_send_json_error(
 			$email_confirmation->getData()
 		);

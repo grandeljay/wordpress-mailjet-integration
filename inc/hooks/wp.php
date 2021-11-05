@@ -7,15 +7,28 @@
  */
 
 function gjmj4wp_confirm_email() {
+	/**
+	 * Verify fields
+	 */
 	if (
-		! isset( $_GET['gjmp4wp-email'], $_GET['gjmp4wp-checksum'], $_GET['gjmp4wp-nonce'] ) ||
-		false === wp_verify_nonce( $_GET['gjmp4wp-nonce'] )
+		! isset(
+			$_GET['gjmp4wp-email'],
+			$_GET['gjmp4wp-checksum'],
+			$_GET['gjmp4wp-nonce']
+		)
 	) {
 		return;
 	}
 
 	/**
-	 * Checksum
+	 * Verify nonce
+	 */
+	if ( false === wp_verify_nonce( $_GET['gjmp4wp-nonce'], 'newsletter-subscribe' ) ) {
+		return;
+	}
+
+	/**
+	 * Verify checksum
 	 */
 	$checksum = sha1( 'GJMJ4WP-' . $_SERVER['DOCUMENT_ROOT'] . '-' . $_GET['gjmp4wp-email'] );
 
@@ -40,6 +53,7 @@ function gjmj4wp_confirm_email() {
 	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$contact_add_body = array(
 		'Email'    => $_GET['gjmp4wp-email'],
+		// 'language' => GJMJ4WP_LANGUAGE_DEFAULT,
 	);
 
 	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
