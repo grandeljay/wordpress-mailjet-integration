@@ -5,9 +5,9 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '59b70022c8cfd792b67f90bb927e4b7f3222554f',
+        'reference' => 'a0677639f0b459f476394dea61f8d9e219b8b259',
         'name' => '__root__',
-        'dev' => false,
+        'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '59b70022c8cfd792b67f90bb927e4b7f3222554f',
+            'reference' => 'a0677639f0b459f476394dea61f8d9e219b8b259',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
@@ -30,6 +30,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'dealerdirect/phpcodesniffer-composer-installer' => array(
+            'pretty_version' => 'v0.7.1',
+            'version' => '0.7.1.0',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../dealerdirect/phpcodesniffer-composer-installer',
+            'aliases' => array(),
+            'reference' => 'fe390591e0241955f22eb9ba327d137e501c771c',
+            'dev_requirement' => true,
         ),
         'guzzlehttp/guzzle' => array(
             'pretty_version' => '7.4.0',
@@ -145,6 +154,15 @@
             'reference' => '120b605dfeb996808c31b6477290a714d356e822',
             'dev_requirement' => false,
         ),
+        'squizlabs/php_codesniffer' => array(
+            'pretty_version' => '3.6.1',
+            'version' => '3.6.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
+            'aliases' => array(),
+            'reference' => 'f268ca40d54617c6e06757f83f699775c9b3ff2e',
+            'dev_requirement' => true,
+        ),
         'symfony/deprecation-contracts' => array(
             'pretty_version' => 'v2.4.0',
             'version' => '2.4.0.0',
@@ -153,6 +171,15 @@
             'aliases' => array(),
             'reference' => '5f38c8804a9e97d23e0c8d63341088cd8a22d627',
             'dev_requirement' => false,
+        ),
+        'wp-coding-standards/wpcs' => array(
+            'pretty_version' => '2.3.0',
+            'version' => '2.3.0.0',
+            'type' => 'phpcodesniffer-standard',
+            'install_path' => __DIR__ . '/../wp-coding-standards/wpcs',
+            'aliases' => array(),
+            'reference' => '7da1894633f168fe244afc6de00d141f27517b62',
+            'dev_requirement' => true,
         ),
     ),
 );
