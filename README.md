@@ -1,7 +1,11 @@
 # Mailjet for WordPress
-A simple Mailjet integration for WordPress developers.
+A simple Mailjet integration for WordPress.
 
-This plugin isn't meant to be user friendly and have a fancy user inferface. It is for developers who want to integrate Mailjet into WordPress without all the bloat. It is aiming to be simple, uncomplicated and very customizable.
+All you have to do is edit the configuration. Optionally add your own style.
+
+Mailjet for WordPress is like any other Mailjet integration just without the graphical user interface in the WordPress admin. It's aiming to be simple, lightweight, robust and customizable.
+
+If you have any questions, check out the [wiki](https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/wiki) or open an [issue](https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/issues).
 
 
 ## Getting started
@@ -46,8 +50,3 @@ So far the following variables are available and can be used in your transaction
 
 ### Coding standard
 We are using the WordPress-Core and WordPress-Extra coding standard.
-
-
-## Questions?
-
-Check out the [wiki](https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/wiki) or open an [issue](https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/issues).
