@@ -26,11 +26,11 @@ function gjmj4wp_confirm_email() {
 
     // phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$mailjet = new \Mailjet\Client(
-		MJ4WP_API_KEY,
-		MJ4WP_API_SECRET,
+		GJMJ4WP_API_KEY,
+		GJMJ4WP_API_SECRET,
 		true,
 		array(
-			'version' => MJ4WP_API_VERSION,
+			'version' => GJMJ4WP_API_VERSION,
 		)
 	);
 
