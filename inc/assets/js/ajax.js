@@ -3,6 +3,7 @@
  */
 
 jQuery( document ).ready( function( $ ) {
+	console.log(gjmj4wp.language);
 
 	$( '.gjmj4wp-subscribe' ).submit( function( event ) {
 		event.preventDefault();
@@ -14,6 +15,7 @@ jQuery( document ).ready( function( $ ) {
 				action: 'gjmj4wp_ajax_subscribe',
 
 				email: $( '[name="email"]' ).val(),
+				language: gjmj4wp.language,
 			},
 			function( response ) {
 				if ( response.data.message ) {

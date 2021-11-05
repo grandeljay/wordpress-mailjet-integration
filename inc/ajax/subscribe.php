@@ -41,10 +41,11 @@ function gjmj4wp_ajax_subscribe() {
 						'Email' => $_POST['email'],
 					),
 				),
-				'TemplateID'       => GJMJ4WP_TEMPLATE_CONFIRMATION,
+				'TemplateID'       => GJMJ4WP_TEMPLATE_CONFIRMATION[ GJMJ4WP_LANGUAGE_DEFAULT ],
 				'TemplateLanguage' => true,
 				'Subject'          => 'Confirm your email',
 				'Variables'        => array(
+					'approximatename'  => explode( '@', $_POST['email'] )[0],
 					'confirmationlink' => $condirmation_link,
 				),
 			),

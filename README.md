@@ -27,6 +27,21 @@ This plugin isn't meant to be user friendly and have a fancy user inferface. It 
     Add `[mailjet_for_wordpress]` anywhere to see the subscription form.
 
 
+## Template variables
+So far the following variables are available and can be used in your transactional Mailjet templates.
+
+* confirmationlink
+
+    The link to confirm a subscribers email address.
+
+* approximatename
+
+    The subscribers name guessed, based on the email address. Currently the part before the `@` is used.
+
+	Example:
+	john.doe@domain.tld would extract `john.doe` and use it to greet the subscriber.
+
+
 ## Contributing
 
 ### Coding standard

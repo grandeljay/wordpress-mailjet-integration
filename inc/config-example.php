@@ -26,3 +26,13 @@ define( 'GJMJ4WP_TEMPLATE_FROM_NAME', 'Company Name' );
  */
 define( 'GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS', 0 );
 define( 'GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE', 0 );
+
+/**
+ * WPML
+ *
+ * Language to use if WMPL is not installed.
+ */
+define(
+	'GJMJ4WP_LANGUAGE_DEFAULT',
+	defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : 'en'
+);

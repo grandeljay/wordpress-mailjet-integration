@@ -48,14 +48,30 @@ function gjmj4wp_confirm_email() {
 		)
 	);
 
-	// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
+	/**
+	 * Redirect
+	 */
 	if ( $contact_add->success() ) {
 		/** Creating a contact has succeeded. */
-		wp_safe_redirect( get_page_link( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS ) );
+		$id = apply_filters(
+			'wpml_object_id',
+			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS,
+			get_post_type( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS ),
+			true,
+			GJMJ4WP_LANGUAGE_DEFAULT,
+		);
 	} else {
 		/** Creating a contact has failed. */
-		wp_safe_redirect( get_page_link( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE ) );
+		$id = apply_filters(
+			'wpml_object_id',
+			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE,
+			get_post_type( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE ),
+			true,
+			GJMJ4WP_LANGUAGE_DEFAULT,
+		);
 	}
+
+	wp_safe_redirect( get_page_link( $id ) );
 	die();
 
 }

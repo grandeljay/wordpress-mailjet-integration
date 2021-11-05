@@ -15,13 +15,26 @@
  * Text Domain:       grandeljay-mailjet-for-wordpress
  */
 
-require 'vendor/autoload.php';
-require 'inc/config.php';
-require 'inc/functions/auto-include.php';
+/**
+ * gjmj4wp_initialize
+ *
+ * This plugin uses some WPML constants, hooks and filters.
+ * WPML has to load before this plugin for the config to contain the correct
+ * relevant information.
+ *
+ * @return void
+ */
+function gjmj4wp_initialize() {
+	require 'vendor/autoload.php';
+	require 'inc/config.php';
+	require 'inc/functions/auto-include.php';
 
-define( 'GJMJ4WP', __DIR__ );
+	define( 'GJMJ4WP', __DIR__ );
 
-gjmj4wp_auto_include( GJMJ4WP . '/inc/functions' );
-gjmj4wp_auto_include( GJMJ4WP . '/inc/shortcodes' );
-gjmj4wp_auto_include( GJMJ4WP . '/inc/hooks' );
-gjmj4wp_auto_include( GJMJ4WP . '/inc/ajax' );
+	gjmj4wp_auto_include( GJMJ4WP . '/inc/functions' );
+	gjmj4wp_auto_include( GJMJ4WP . '/inc/shortcodes' );
+	gjmj4wp_auto_include( GJMJ4WP . '/inc/hooks' );
+	gjmj4wp_auto_include( GJMJ4WP . '/inc/ajax' );
+}
+
+add_action( 'plugins_loaded', 'gjmj4wp_initialize' );
