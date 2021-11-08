@@ -38,13 +38,19 @@ function gjmj4wp_ajax_subscribe() {
 	switch ( GJMJ4WP_API_VERSION ) {
 		case 'v3':
 			$email_confirmation_body = array(
-				'FromEmail'  => GJMJ4WP_TEMPLATE_FROM_EMAIL,
-				'FromName'   => GJMJ4WP_TEMPLATE_FROM_NAME,
-				'Subject'    => 'Confirm your email',
-				'Recipients' => array(
+				'FromEmail'           => GJMJ4WP_TEMPLATE_FROM_EMAIL,
+				'FromName'            => GJMJ4WP_TEMPLATE_FROM_NAME,
+				'Subject'             => 'Confirm your email',
+				'Recipients'          => array(
 					array(
 						'Email' => $_POST['email'],
 					),
+				),
+				'MJ-TemplateID'       => GJMJ4WP_TEMPLATE_CONFIRMATION[ GJMJ4WP_LANGUAGE_DEFAULT ],
+				'MJ-TemplateLanguage' => true,
+				'Vars'                => array(
+					'approximatename'  => explode( '@', $_POST['email'] )[0],
+					'confirmationlink' => $condirmation_link,
 				),
 			);
 			break;
