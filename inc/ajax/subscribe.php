@@ -36,6 +36,7 @@ function gjmj4wp_ajax_subscribe() {
 	$email_confirmation_body = array();
 
 	switch ( GJMJ4WP_API_VERSION ) {
+	error_log( $condirmation_link );
 		case 'v3':
 			$email_confirmation_body = array(
 				'FromEmail'           => GJMJ4WP_TEMPLATE_FROM_EMAIL,
