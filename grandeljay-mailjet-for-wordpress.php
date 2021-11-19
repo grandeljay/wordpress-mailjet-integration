@@ -12,6 +12,7 @@
  * Requires at least: 5.8
  * Requires PHP:      8.0
  * Author:            Jay Trees
+ * Author URI:        https://github.com/grandeljay
  * Text Domain:       grandeljay-mailjet-for-wordpress
  *
  * @git-updater
