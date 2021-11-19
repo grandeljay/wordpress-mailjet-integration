@@ -32,7 +32,7 @@ function gjmj4wp_ajax_subscribe() {
 	 */
 	$checksum                = sha1( 'GJMJ4WP-' . $_SERVER['DOCUMENT_ROOT'] . '-' . $_POST['email'] );
 	$nonce                   = wp_create_nonce( 'newsletter-subscribe' );
-	$condirmation_link       = get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&gjmp4wp-checksum=' . $checksum . '&gjmp4wp-nonce=' . $nonce;
+	$confirmation_link       = get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&gjmp4wp-checksum=' . $checksum . '&gjmp4wp-nonce=' . $nonce;
 	$email_confirmation_body = array();
 
 	switch ( GJMJ4WP_SEND_API_VERSION ) {
@@ -50,7 +50,7 @@ function gjmj4wp_ajax_subscribe() {
 				'MJ-TemplateLanguage' => true,
 				'Vars'                => array(
 					'approximatename'  => explode( '@', $_POST['email'] )[0],
-					'confirmationlink' => $condirmation_link,
+					'confirmationlink' => $confirmation_link,
 				),
 			);
 			break;
@@ -73,7 +73,7 @@ function gjmj4wp_ajax_subscribe() {
 						'Subject'          => 'Confirm your email',
 						'Variables'        => array(
 							'approximatename'  => explode( '@', $_POST['email'] )[0],
-							'confirmationlink' => $condirmation_link,
+							'confirmationlink' => $confirmation_link,
 						),
 					),
 				),
