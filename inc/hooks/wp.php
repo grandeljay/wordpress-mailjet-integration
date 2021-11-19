@@ -52,8 +52,7 @@ function gjmj4wp_confirm_email() {
 
 	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$contact_add_body = array(
-		'Email'    => $_GET['gjmp4wp-email'],
-		// 'language' => GJMJ4WP_LANGUAGE_DEFAULT,
+		'Email' => $_GET['gjmp4wp-email'],
 	);
 
 	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
@@ -63,6 +62,15 @@ function gjmj4wp_confirm_email() {
 		array(
 			'body' => $contact_add_body,
 		)
+	);
+
+	/**
+	 * Contact Properties
+	 *
+	 * @link https://dev.mailjet.com/email/reference/contacts/contact-properties/
+	 */
+	$properties_add_body = array(
+		'Data' => array( GJMJ4WP_CONTACT_PROPERTIES ),
 	);
 
 	/**

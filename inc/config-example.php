@@ -37,3 +37,14 @@ define(
 	'GJMJ4WP_LANGUAGE_DEFAULT',
 	defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : 'en'
 );
+
+/**
+ * Contact Properties
+ */
+define(
+	'GJMJ4WP_CONTACT_PROPERTIES',
+	array(
+		'Name'  => 'language',
+		'Value' => GJMJ4WP_LANGUAGE_DEFAULT,
+	)
+);
