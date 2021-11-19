@@ -13,6 +13,10 @@
  * Requires PHP:      8.0
  * Author:            Jay Trees
  * Text Domain:       grandeljay-mailjet-for-wordpress
+ *
+ * @git-updater
+ * GitHub Plugin URI: grandeljay/grandeljay-mailjet-for-wordpress
+ * Primary Branch: stable
  */
 
 /**
