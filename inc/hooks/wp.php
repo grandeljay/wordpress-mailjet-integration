@@ -40,7 +40,7 @@ function gjmj4wp_confirm_email() {
 	 * Add Contact
 	 */
 
-    // phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
+	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$mailjet = new \Mailjet\Client(
 		GJMJ4WP_API_KEY,
 		GJMJ4WP_API_SECRET,
