@@ -96,7 +96,20 @@ function gjmj4wp_confirm_email() {
 		);
 	}
 
-	wp_safe_redirect( get_page_link( $id ) );
+	/** Target */
+	$redirect_target = get_page_link( $id );
+
+	if ( $contact_add->getBody() ) {
+		foreach ( $contact_add->getBody() as $key => $value ) {
+			$redirect_target = add_query_arg(
+				rawurlencode( $key ),
+				rawurlencode( $value ),
+				$redirect_target
+			);
+		}
+	}
+
+	wp_safe_redirect( $redirect_target );
 	die();
 
 }
