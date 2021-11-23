@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Mailjet for WordPress shortcode
+ * Mailjet for WordPress shortcode (subscription form)
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
