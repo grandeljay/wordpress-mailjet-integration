@@ -11,7 +11,11 @@ function gjmj4wp_shortcode_mailjet_for_wordpress_response( $atts = array(), $con
 
 	// phpcs:disable WordPress.Security.NonceVerification.Recommended
 	if ( isset( $_GET['gjmj4wp-response'] ) ) {
-		$response = $_GET['gjmj4wp-response'];
+		$response .= $_GET['gjmj4wp-response'];
+	}
+	if ( isset( $_GET['ErrorMessage'] ) ) {
+		$response .= '<strong>' . $_GET['StatusCode'] . '</strong> - ';
+		$response .= stripslashes( $_GET['ErrorMessage'] );
 	}
 	// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
