@@ -24,6 +24,13 @@ function gjmj4wp_confirm_email() {
 	 * Verify nonce
 	 */
 	if ( false === wp_verify_nonce( $_GET['gjmp4wp-nonce'], 'newsletter-subscribe' ) ) {
+		wp_safe_redirect(
+			add_query_arg(
+				rawurlencode( 'response' ),
+				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-for-wordpress' ) ),
+				get_page_link( get_page_id_subscribe_failure() ),
+			)
+		);
 		return;
 	}
 
@@ -33,6 +40,13 @@ function gjmj4wp_confirm_email() {
 	$checksum = sha1( 'GJMJ4WP-' . $_SERVER['DOCUMENT_ROOT'] . '-' . $_GET['gjmp4wp-email'] );
 
 	if ( $checksum !== $_GET['gjmp4wp-checksum'] ) {
+		wp_safe_redirect(
+			add_query_arg(
+				rawurlencode( 'response' ),
+				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-for-wordpress' ) ),
+				get_page_link( get_page_id_subscribe_failure() ),
+			)
+		);
 		return;
 	}
 
@@ -76,24 +90,10 @@ function gjmj4wp_confirm_email() {
 	/**
 	 * Redirect
 	 */
+	$id = get_page_id_subscribe_failure();
+
 	if ( $contact_add->success() ) {
-		/** Creating a contact has succeeded. */
-		$id = apply_filters(
-			'wpml_object_id',
-			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS,
-			get_post_type( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS ),
-			true,
-			GJMJ4WP_LANGUAGE_DEFAULT,
-		);
-	} else {
-		/** Creating a contact has failed. */
-		$id = apply_filters(
-			'wpml_object_id',
-			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE,
-			get_post_type( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE ),
-			true,
-			GJMJ4WP_LANGUAGE_DEFAULT,
-		);
+		$id = get_page_id_subscribe_success();
 	}
 
 	/** Target */
