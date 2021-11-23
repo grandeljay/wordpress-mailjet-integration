@@ -26,7 +26,7 @@ function gjmj4wp_confirm_email() {
 	if ( false === wp_verify_nonce( $_GET['gjmp4wp-nonce'], 'newsletter-subscribe' ) ) {
 		wp_safe_redirect(
 			add_query_arg(
-				rawurlencode( 'response' ),
+				rawurlencode( 'gjmf4wp-response' ),
 				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-for-wordpress' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
@@ -42,7 +42,7 @@ function gjmj4wp_confirm_email() {
 	if ( $checksum !== $_GET['gjmp4wp-checksum'] ) {
 		wp_safe_redirect(
 			add_query_arg(
-				rawurlencode( 'response' ),
+				rawurlencode( 'gjmf4wp-response' ),
 				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-for-wordpress' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
@@ -54,7 +54,7 @@ function gjmj4wp_confirm_email() {
 	 * Add Contact
 	 */
 
-	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
+	// phpcs:disable Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$mailjet = new \Mailjet\Client(
 		GJMJ4WP_API_KEY,
 		GJMJ4WP_API_SECRET,
@@ -64,12 +64,10 @@ function gjmj4wp_confirm_email() {
 		)
 	);
 
-	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$contact_add_body = array(
 		'Email' => $_GET['gjmp4wp-email'],
 	);
 
-	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$contact_add = $mailjet->post(
 		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		\Mailjet\Resources::$Contact,
@@ -77,6 +75,7 @@ function gjmj4wp_confirm_email() {
 			'body' => $contact_add_body,
 		)
 	);
+	// phpcs:enable Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 
 	/**
 	 * Contact Properties
