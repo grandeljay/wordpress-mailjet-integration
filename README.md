@@ -24,8 +24,20 @@ After cloning this repository you can get started after 3 easy steps.
 
     Add `[mailjet_for_wordpress]` anywhere to see the subscription form.
 
+## Configuration
 
-## Template variables
+### Shortcodes
+So far the following shortcodes are available.
+
+* `[mailjet_for_wordpress]`
+
+  The subscription form
+
+* `[mailjet_for_wordpress_response]`
+
+  The response after clicking the confirmation link. Put this in your Success/Failure pages (`GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS`, `GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE`)
+
+### Template variables
 So far the following variables are available and can be used in your transactional Mailjet templates.
 
 * confirmationlink
