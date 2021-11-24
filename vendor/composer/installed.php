@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a0677639f0b459f476394dea61f8d9e219b8b259',
+        'reference' => '92c6ac4cfea38e8649ed059940d2cde736680127',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a0677639f0b459f476394dea61f8d9e219b8b259',
+            'reference' => '92c6ac4cfea38e8649ed059940d2cde736680127',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
@@ -164,12 +164,12 @@
             'dev_requirement' => true,
         ),
         'symfony/deprecation-contracts' => array(
-            'pretty_version' => 'v2.4.0',
-            'version' => '2.4.0.0',
+            'pretty_version' => 'v2.5.0',
+            'version' => '2.5.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),
-            'reference' => '5f38c8804a9e97d23e0c8d63341088cd8a22d627',
+            'reference' => '6f981ee24cf69ee7ce9736146d1c57c2780598a8',
             'dev_requirement' => false,
         ),
         'wp-coding-standards/wpcs' => array(
