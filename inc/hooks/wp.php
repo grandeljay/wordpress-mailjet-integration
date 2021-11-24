@@ -1,12 +1,16 @@
 <?php
-
 /**
- * wp
+ * Hook: wp
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
-function gjmj4wp_confirm_email() {
+/**
+ * Confirm Email
+ *
+ * @return void
+ */
+function gjmj4wp_confirm_email(): void {
 	/**
 	 * Verify fields
 	 */

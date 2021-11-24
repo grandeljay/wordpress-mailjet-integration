@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Mailjet for WordPress
  *
@@ -23,7 +22,7 @@
  */
 
 /**
- * gjmj4wp_initialize
+ * Initialize
  *
  * This plugin uses some WPML constants, hooks and filters.
  * WPML has to load before this plugin for the config to contain the correct
