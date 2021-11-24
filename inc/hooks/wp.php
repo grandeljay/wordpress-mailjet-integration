@@ -26,6 +26,10 @@ function gjmj4wp_confirm_email(): void {
 
 	/**
 	 * Verify nonce
+	 *
+	 * phpcs:disable Generic.Commenting.DocComment.MissingShort
+	 * phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	 * phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 	 */
 	if ( false === wp_verify_nonce( $_GET['gjmp4wp-nonce'], 'newsletter-subscribe' ) ) {
 		wp_safe_redirect(
@@ -35,7 +39,7 @@ function gjmj4wp_confirm_email(): void {
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
 		);
-		return;
+		die();
 	}
 
 	/**
@@ -54,6 +58,11 @@ function gjmj4wp_confirm_email(): void {
 		);
 		return;
 	}
+	/**
+	 * phpcs:enable Generic.Commenting.DocComment.MissingShort
+	 * phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	 * phpcs:enable WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+	 */
 
 	/**
 	 * Add Contact
@@ -69,7 +78,7 @@ function gjmj4wp_confirm_email(): void {
 	);
 
 	$contact_add_body = array(
-		'Email' => $_GET['gjmp4wp-email'],
+		'Email' => sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
 	);
 
 	$contact_add = $mailjet->post(
@@ -85,13 +94,23 @@ function gjmj4wp_confirm_email(): void {
 	 *
 	 * @link https://dev.mailjet.com/email/reference/contacts/contact-properties/
 	 */
-	$properties_add_body = array(
+	$properties_update_body = array(
 		'Data' => array( GJMJ4WP_CONTACT_PROPERTIES ),
 	);
 
 	echo '<pre>';
 	var_dump( $contact_add );
 	echo '</pre>';
+
+	$properties_update = $mailjet->put(
+		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+		\Mailjet\Resources::$Contactdata,
+		array(
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			'id'   => $contact_add->Data['ID'],
+			'body' => $properties_update_body,
+		)
+	);
 
 	echo '<pre>';
 	var_dump( $properties_update_body );
