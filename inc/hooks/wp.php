@@ -41,7 +41,8 @@ function gjmj4wp_confirm_email(): void {
 	/**
 	 * Verify checksum
 	 */
-	$checksum = sha1( 'GJMJ4WP-' . $_SERVER['DOCUMENT_ROOT'] . '-' . $_GET['gjmp4wp-email'] );
+	$s_doc_root = isset( $_SERVER['DOCUMENT_ROOT'] ) ? $_SERVER['DOCUMENT_ROOT'] : '';
+	$checksum   = sha1( 'GJMJ4WP-' . $s_doc_root . '-' . $_GET['gjmp4wp-email'] );
 
 	if ( $checksum !== $_GET['gjmp4wp-checksum'] ) {
 		wp_safe_redirect(
@@ -58,7 +59,6 @@ function gjmj4wp_confirm_email(): void {
 	 * Add Contact
 	 */
 
-	// phpcs:disable Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$mailjet = new \Mailjet\Client(
 		GJMJ4WP_API_KEY,
 		GJMJ4WP_API_SECRET,
@@ -79,7 +79,6 @@ function gjmj4wp_confirm_email(): void {
 			'body' => $contact_add_body,
 		)
 	);
-	// phpcs:enable Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 
 	/**
 	 * Contact Properties

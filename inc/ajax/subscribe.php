@@ -30,7 +30,8 @@ function gjmj4wp_ajax_subscribe() {
 	 * However, I only noticed that after creating both and thought
 	 * it couldn't harm to keep both.
 	 */
-	$checksum                = sha1( 'GJMJ4WP-' . $_SERVER['DOCUMENT_ROOT'] . '-' . $_POST['email'] );
+	$s_doc_root              = isset( $_SERVER['DOCUMENT_ROOT'] ) ? $_SERVER['DOCUMENT_ROOT'] : '';
+	$checksum                = sha1( 'GJMJ4WP-' . $s_doc_root . '-' . $_POST['email'] );
 	$nonce                   = wp_create_nonce( 'newsletter-subscribe' );
 	$confirmation_link       = get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&gjmp4wp-checksum=' . $checksum . '&gjmp4wp-nonce=' . $nonce;
 	$email_confirmation_body = array();
