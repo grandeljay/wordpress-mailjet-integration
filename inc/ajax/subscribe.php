@@ -1,19 +1,27 @@
 <?php
-
 /**
- * subscribe.php
+ * Subscribe
+ *
+ * Sends a confirmation email to the specified email address.
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
-function gjmj4wp_ajax_subscribe() {
+/**
+ * Subscribe
+ *
+ * @return void
+ */
+function gjmj4wp_ajax_subscribe(): void {
 	check_ajax_referer( 'GJMJ4WP-AJAX' );
+
+	if ( ! isset( $_POST['email'] ) ) {
+		wp_die();
+	}
 
 	/**
 	 * Mailjet
 	 */
-
-	// phpcs:ignore Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 	$mailjet = new \Mailjet\Client(
 		GJMJ4WP_API_KEY,
 		GJMJ4WP_API_SECRET,
@@ -26,14 +34,16 @@ function gjmj4wp_ajax_subscribe() {
 	/**
 	 * Send confirmation mail
 	 *
-	 * Using a checksum and an nonce is probably unnecessary.
-	 * However, I only noticed that after creating both and thought
-	 * it couldn't harm to keep both.
+	 * Using a checksum and an nonce is probably unnecessary. However, I only
+	 * noticed that after creating both and thought it couldn't harm to keep
+	 * them.
 	 */
+	// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 	$s_doc_root              = isset( $_SERVER['DOCUMENT_ROOT'] ) ? $_SERVER['DOCUMENT_ROOT'] : '';
-	$checksum                = sha1( 'GJMJ4WP-' . $s_doc_root . '-' . $_POST['email'] );
+	$email                   = sanitize_email( wp_unslash( $_POST['email'] ) );
+	$checksum                = sha1( 'GJMJ4WP-' . $s_doc_root . '-' . $email );
 	$nonce                   = wp_create_nonce( 'newsletter-subscribe' );
-	$confirmation_link       = get_site_url() . '/?gjmp4wp-email=' . $_POST['email'] . '&gjmp4wp-checksum=' . $checksum . '&gjmp4wp-nonce=' . $nonce;
+	$confirmation_link       = get_site_url() . '/?gjmp4wp-email=' . $email . '&gjmp4wp-checksum=' . $checksum . '&gjmp4wp-nonce=' . $nonce;
 	$email_confirmation_body = array();
 
 	switch ( GJMJ4WP_SEND_API_VERSION ) {
@@ -44,13 +54,13 @@ function gjmj4wp_ajax_subscribe() {
 				'Subject'             => 'Confirm your email',
 				'Recipients'          => array(
 					array(
-						'Email' => $_POST['email'],
+						'Email' => $email,
 					),
 				),
 				'MJ-TemplateID'       => GJMJ4WP_TEMPLATE_CONFIRMATION[ GJMJ4WP_LANGUAGE_DEFAULT ],
 				'MJ-TemplateLanguage' => true,
 				'Vars'                => array(
-					'approximatename'  => explode( '@', $_POST['email'] )[0],
+					'approximatename'  => explode( '@', $email )[0],
 					'confirmationlink' => $confirmation_link,
 				),
 			);
@@ -66,14 +76,14 @@ function gjmj4wp_ajax_subscribe() {
 						),
 						'To'               => array(
 							array(
-								'Email' => $_POST['email'],
+								'Email' => $email,
 							),
 						),
 						'TemplateID'       => GJMJ4WP_TEMPLATE_CONFIRMATION[ GJMJ4WP_LANGUAGE_DEFAULT ],
 						'TemplateLanguage' => true,
 						'Subject'          => 'Confirm your email',
 						'Variables'        => array(
-							'approximatename'  => explode( '@', $_POST['email'] )[0],
+							'approximatename'  => explode( '@', $email )[0],
 							'confirmationlink' => $confirmation_link,
 						),
 					),
@@ -94,10 +104,6 @@ function gjmj4wp_ajax_subscribe() {
 		/**
 		 * Sending a confirmation email has succeeded
 		 */
-
-		// The output is indeed being escaped and therefore
-		// this error will be ignored.
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo wp_send_json_success(
 			array(
 				'message' => esc_html__( 'Please confirm your email address.', 'grandeljay-mailjet-for-wordpress' ),

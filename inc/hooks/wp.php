@@ -89,6 +89,15 @@ function gjmj4wp_confirm_email(): void {
 		'Data' => array( GJMJ4WP_CONTACT_PROPERTIES ),
 	);
 
+	echo '<pre>';
+	var_dump( $contact_add );
+	echo '</pre>';
+
+	echo '<pre>';
+	var_dump( $properties_update_body );
+	echo '</pre>';
+	die();
+
 	/**
 	 * Redirect
 	 */
