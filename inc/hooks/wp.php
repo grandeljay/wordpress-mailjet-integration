@@ -56,7 +56,7 @@ function gjmj4wp_confirm_email(): void {
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
 		);
-		return;
+		die();
 	}
 	/**
 	 * phpcs:enable Generic.Commenting.DocComment.MissingShort
@@ -67,7 +67,6 @@ function gjmj4wp_confirm_email(): void {
 	/**
 	 * Add Contact
 	 */
-
 	$mailjet = new \Mailjet\Client(
 		GJMJ4WP_API_KEY,
 		GJMJ4WP_API_SECRET,
@@ -98,10 +97,6 @@ function gjmj4wp_confirm_email(): void {
 		'Data' => array( GJMJ4WP_CONTACT_PROPERTIES ),
 	);
 
-	echo '<pre>';
-	var_dump( $contact_add );
-	echo '</pre>';
-
 	$properties_update = $mailjet->put(
 		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		\Mailjet\Resources::$Contactdata,
@@ -111,11 +106,6 @@ function gjmj4wp_confirm_email(): void {
 			'body' => $properties_update_body,
 		)
 	);
-
-	echo '<pre>';
-	var_dump( $properties_update_body );
-	echo '</pre>';
-	die();
 
 	/**
 	 * Redirect
