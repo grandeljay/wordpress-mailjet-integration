@@ -4,6 +4,7 @@
         "wp-coding-standards/wpcs": "^2.3"
     },
     "require": {
-        "mailjet/mailjet-apiv3-php": "^1.5"
+        "mailjet/mailjet-apiv3-php": "^1.5",
+        "egulias/email-validator": "^3.1"
     }
 }
