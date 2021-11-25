@@ -61,7 +61,7 @@ composer install
 ```
 
 ### Coding standard
-We are using the WordPress-Core and WordPress-Extra coding standard.
+We are using the WordPress coding standard.
 
 ### Contributors
 For a full list of all contributers please see [Contributors](https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/graphs/contributors).
