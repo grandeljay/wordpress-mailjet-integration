@@ -1,7 +1,6 @@
 <?php
-
 /**
- * config-example.php
+ * Config
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
