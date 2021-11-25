@@ -1,12 +1,16 @@
 <?php
-
 /**
- * get-page-id-subscribe.php
+ * Get Page ID for Subscription events
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
-function get_page_id_subscribe_success() {
+/**
+ * Success
+ *
+ * @return int
+ */
+function get_page_id_subscribe_success(): int {
 	$id = 0;
 
 	if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
@@ -22,7 +26,12 @@ function get_page_id_subscribe_success() {
 	return $id;
 }
 
-function get_page_id_subscribe_failure() {
+/**
+ * Failure
+ *
+ * @return int
+ */
+function get_page_id_subscribe_failure(): int {
 	$id = 0;
 
 	if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {

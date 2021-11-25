@@ -1,12 +1,16 @@
 <?php
-
 /**
- * wp_enqueue_script
+ * Enqueue Scripts
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
-function gjmj4wp_wp_enqueue_scripts() {
+/**
+ * Enqueue Scripts function
+ *
+ * @return void
+ */
+function gjmj4wp_wp_enqueue_scripts(): void {
 	/**
 	 * Styles
 	 */
