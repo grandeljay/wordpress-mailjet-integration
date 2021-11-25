@@ -97,15 +97,17 @@ function gjmj4wp_confirm_email(): void {
 		'Data' => array( GJMJ4WP_CONTACT_PROPERTIES ),
 	);
 
-	$properties_update = $mailjet->put(
-		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-		\Mailjet\Resources::$Contactdata,
-		array(
+	if ( defined( 'GJMJ4WP_CONTACT_PROPERTIES' ) && count( GJMJ4WP_CONTACT_PROPERTIES ) > 0 ) {
+		$properties_update = $mailjet->put(
 			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-			'id'   => $contact_add->Data['ID'],
-			'body' => $properties_update_body,
-		)
-	);
+			\Mailjet\Resources::$Contactdata,
+			array(
+				// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				'id'   => $contact_add->getBody()['Data'][0]['ID'],
+				'body' => $properties_update_body,
+			)
+		);
+	}
 
 	/**
 	 * Redirect
