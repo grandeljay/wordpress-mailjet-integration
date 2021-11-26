@@ -45,6 +45,6 @@ define(
 	'GJMJ4WP_CONTACT_PROPERTIES',
 	array(
 		'Name'  => 'language',
-		'Value' => GJMJ4WP_LANGUAGE_DEFAULT,
+		'Value' => GJMJ4WP_LANGUAGE_CURRENT,
 	)
 );
