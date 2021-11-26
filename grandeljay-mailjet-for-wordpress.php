@@ -34,9 +34,9 @@ define( 'GJMF4WP_PLUGIN', __FILE__ );
  * @return void
  */
 function gjmj4wp_initialize() {
-	require 'vendor/autoload.php';
-	require 'inc/config.php';
-	require 'inc/functions/auto-include.php';
+	include 'vendor/autoload.php';
+	include 'inc/functions/auto-include.php';
+	include 'inc/config.php';
 
 	define( 'GJMJ4WP', __DIR__ );
 
