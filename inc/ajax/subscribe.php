@@ -57,7 +57,7 @@ function gjmj4wp_ajax_subscribe(): void {
 						'Email' => $email,
 					),
 				),
-				'MJ-TemplateID'       => GJMJ4WP_TEMPLATE_CONFIRMATION[ GJMJ4WP_LANGUAGE_DEFAULT ],
+				'MJ-TemplateID'       => gjmj4wp_get_template_id(),
 				'MJ-TemplateLanguage' => true,
 				'Vars'                => array(
 					'approximatename'  => explode( '@', $email )[0],
@@ -79,7 +79,7 @@ function gjmj4wp_ajax_subscribe(): void {
 								'Email' => $email,
 							),
 						),
-						'TemplateID'       => GJMJ4WP_TEMPLATE_CONFIRMATION[ GJMJ4WP_LANGUAGE_DEFAULT ],
+						'TemplateID'       => gjmj4wp_get_template_id(),
 						'TemplateLanguage' => true,
 						'Subject'          => 'Confirm your email',
 						'Variables'        => array(
