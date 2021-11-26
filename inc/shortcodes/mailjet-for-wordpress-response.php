@@ -1,12 +1,19 @@
 <?php
-
 /**
  * Mailjet for WordPress shortcode (response)
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
-function gjmj4wp_shortcode_mailjet_for_wordpress_response( $atts = array(), $content = '' ) {
+/**
+ * Response
+ *
+ * @param array  $atts    Any shortcode attributes.
+ * @param string $content The shortcode content.
+ *
+ * @return string
+ */
+function gjmj4wp_shortcode_mailjet_for_wordpress_response( $atts = array(), $content = '' ): string {
 	$response = '';
 
 	// phpcs:disable WordPress.Security.NonceVerification.Recommended
