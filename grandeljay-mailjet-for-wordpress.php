@@ -15,11 +15,14 @@
  * Text Domain:       grandeljay-mailjet-for-wordpress
  * License:           APGL3
  * License URI:       https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/blob/stable/LICENSE
+ * Domain Path:       /languages
  *
  * @git-updater
  * GitHub Plugin URI: grandeljay/grandeljay-mailjet-for-wordpress
  * Primary Branch: stable
  */
+
+define( 'GJMF4WP_PLUGIN', __FILE__ );
 
 /**
  * Initialize
