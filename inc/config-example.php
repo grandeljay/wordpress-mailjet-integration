@@ -32,9 +32,10 @@ define( 'GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE', 0 );
  *
  * Language to use if WMPL is not installed.
  */
+define( 'GJMJ4WP_LANGUAGE_DEFAULT', 'en' );
 define(
-	'GJMJ4WP_LANGUAGE_DEFAULT',
-	defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : 'en'
+	'GJMJ4WP_LANGUAGE_CURRENT',
+	defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : GJMJ4WP_LANGUAGE_DEFAULT
 );
 
 /**

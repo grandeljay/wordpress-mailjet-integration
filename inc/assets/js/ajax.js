@@ -24,17 +24,23 @@ jQuery( document ).ready( function( $ ) {
 			}
 		)
 		.done( function( response ) {
+			var messages = [];
+
 			if ( response.data.message ) {
-				form_response.html(
-					response.data.message
-				);
-			} else if ( response.data.ErrorMessage ) {
-				form_response.html(
-					response.data.ErrorInfo + '<br />' +
-					response.data.ErrorMessage + '<br />' +
-					response.data.StatusCode
-				);
+				messages.push(response.data.message);
 			}
+
+			if ( response.data.ErrorInfo ) {
+				messages.push(response.data.ErrorInfo);
+			}
+			if ( response.data.ErrorMessage ) {
+				messages.push(response.data.ErrorMessage);
+			}
+			if ( response.data.StatusCode ) {
+				messages.push(response.data.StatusCode);
+			}
+
+			form_response.html(messages.join('<br />'));
 		} )
 		.fail( function( data ) {
 			form_response.html(
