@@ -11,13 +11,13 @@
  * @return int
  */
 function get_page_id_subscribe_success(): int {
-	$id = 0;
+	$id = get_option( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS );
 
 	if ( is_wpml_active() ) {
 		$id = apply_filters(
 			'wpml_object_id',
-			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS,
-			get_post_type( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS ),
+			$id,
+			get_post_type( $id ),
 			true,
 			GJMJ4WP_LANGUAGE_DEFAULT,
 		);
@@ -32,13 +32,13 @@ function get_page_id_subscribe_success(): int {
  * @return int
  */
 function get_page_id_subscribe_failure(): int {
-	$id = 0;
+	$id = get_option( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE );
 
 	if ( is_wpml_active() ) {
 		$id = apply_filters(
 			'wpml_object_id',
-			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE,
-			get_post_type( GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE ),
+			$id,
+			get_post_type( $id ),
 			true,
 			GJMJ4WP_LANGUAGE_DEFAULT,
 		);

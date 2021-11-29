@@ -29,7 +29,7 @@ So far the following shortcodes are available.
 
 * `[mailjet_for_wordpress_response]`
 
-  The response after clicking the confirmation link. Put this in your Success/Failure pages (`GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS`, `GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE`)
+  The response after clicking the confirmation link. Put this in your Success/Failure pages.
 
 ### Template variables
 So far the following variables are available and can be used in your transactional Mailjet templates.
