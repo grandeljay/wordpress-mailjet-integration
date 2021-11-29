@@ -6,14 +6,11 @@
  */
 
 /**
- * GJMJ4WP_MENU_SLUG
- *
- * Is also used when initializing sections and fields.
+ * Slugs
  *
  * @see admin-init.php
  */
-define( 'GJMJ4WP_MENU_SLUG', 'gjmj4wp-options' );
-define( 'GJMJ4WP_SETTINGS_DEFAULT', 'gjmj4wp-options' );
+define( 'GJMJ4WP_SETTINGS_MAILJET_API', 'gjmj4wp-mailjet-api' );
 
 /**
  * Options Page
@@ -27,7 +24,7 @@ function gjmj4wp_options() {
 	$page_title = 'Mailjet for WordPress';
 	$menu_title = 'Mailjet for WordPress';
 	$capability = 'manage_options';
-	$menu_slug  = GJMJ4WP_MENU_SLUG;
+	$menu_slug  = 'gjmj4wp-options';
 	$function   = 'gjmj4wp_options_html';
 	$icon_url   = 'dashicons-email';
 	$position   = null;
@@ -60,21 +57,21 @@ function gjmj4wp_options_html() {
 			 *
 			 * @link https://developer.wordpress.org/reference/functions/settings_fields/
 			 */
-			settings_fields( GJMJ4WP_SETTINGS_DEFAULT );
+			settings_fields( GJMJ4WP_SETTINGS_MAILJET_API );
 
 			/**
 			 * Prints out all settings sections added to a particular settings page.
 			 *
 			 * @link https://developer.wordpress.org/reference/functions/do_settings_sections/
 			 */
-			do_settings_sections( GJMJ4WP_MENU_SLUG );
+			do_settings_sections( GJMJ4WP_SETTINGS_MAILJET_API );
 
 			/**
 			 * Echoes a submit button, with provided text and appropriate class(es).
 			 *
 			 * @link https://developer.wordpress.org/reference/functions/submit_button/
 			 */
-			submit_button( __( 'Save Settings', 'grandeljay-mailjet-for-wordpress' ) );
+			submit_button( __( 'Save Mailjet API Settings', 'grandeljay-mailjet-for-wordpress' ) );
 			?>
 		</form>
 	</div>
