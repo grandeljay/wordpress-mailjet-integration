@@ -46,6 +46,14 @@ So far the following variables are available and can be used in your transaction
 	john.doe@domain.tld would extract `john.doe` and use it to greet the subscriber.
 
 
+## Compatibility
+
+Mailjet for WordPress works with:
+
+* [WPML](https://wpml.org/)
+* [Git Updater](https://github.com/afragen/git-updater)
+
+
 ## Contributing
 
 ### Getting started
