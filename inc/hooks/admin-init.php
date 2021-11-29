@@ -50,6 +50,14 @@ function gjmj4wp_settings() {
 			'callback' => 'gjmj4wp_setting_section_html_mailjet_template',
 			'page'     => GJMJ4WP_SETTINGS_MAILJET_TEMPLATE,
 		),
+
+		/** WordPress */
+		array(
+			'id'       => GJMJ4WP_SETTINGS_WORDPRESS,
+			'title'    => __( 'WordPress', 'grandeljay-mailjet-for-wordpress' ),
+			'callback' => 'gjmj4wp_setting_section_html_wordpress',
+			'page'     => GJMJ4WP_SETTINGS_WORDPRESS,
+		),
 	);
 
 	/** WPML */
@@ -226,7 +234,63 @@ function gjmj4wp_settings() {
 				),
 			),
 		),
+
+		/**
+		 * WordPress
+		 */
+
+		/** Confirmation Page ID (Success) */
+		array(
+			array(
+				'id'       => GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS,
+				'title'    => __( 'Page ID Confirmation (Success)', 'grandeljay-mailjet-for-wordpress' ),
+				'callback' => 'gjmj4wp_setting_section_html_wordpress_page_id_confirmation_success',
+				'page'     => GJMJ4WP_SETTINGS_WORDPRESS,
+				'section'  => GJMJ4WP_SETTINGS_WORDPRESS,
+				'args'     => array(
+					'label_for' => GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS,
+				),
+			),
+			array(
+				'option_group' => GJMJ4WP_SETTINGS_WORDPRESS,
+				'option_name'  => GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS,
+				'args'         => array(
+					'type'         => 'integer',
+					'description'  => 'The WordPress confirmation page id (success) to use.',
+					'show_in_rest' => false,
+					'default'      => 0,
+				),
+			),
+		),
+
+		/** Confirmation Page ID (Failure) */
+		array(
+			array(
+				'id'       => GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE,
+				'title'    => __( 'Page ID Confirmation (Failure)', 'grandeljay-mailjet-for-wordpress' ),
+				'callback' => 'gjmj4wp_setting_section_html_wordpress_page_id_confirmation_failure',
+				'page'     => GJMJ4WP_SETTINGS_WORDPRESS,
+				'section'  => GJMJ4WP_SETTINGS_WORDPRESS,
+				'args'     => array(
+					'label_for' => GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE,
+				),
+			),
+			array(
+				'option_group' => GJMJ4WP_SETTINGS_WORDPRESS,
+				'option_name'  => GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE,
+				'args'         => array(
+					'type'         => 'integer',
+					'description'  => 'The WordPress confirmation page id (failure) to use.',
+					'show_in_rest' => false,
+					'default'      => 0,
+				),
+			),
+		),
 	);
+
+	/**
+	 * Mailjet Template
+	 */
 
 	/** Confirmation ID */
 	foreach ( get_active_languages() as $language ) {
@@ -297,8 +361,10 @@ function gjmj4wp_setting_section_html_mailjet_api( $args ): void {
 
 /**
  * Mailjet API: Version
+ *
+ * @return void
  */
-function gjmj4wp_setting_section_html_mailjet_api_version() {
+function gjmj4wp_setting_section_html_mailjet_api_version(): void {
 	$versions        = array(
 		'v2',
 		'v3',
@@ -322,8 +388,10 @@ function gjmj4wp_setting_section_html_mailjet_api_version() {
 
 /**
  * Mailjet API: Version (Send)
+ *
+ * @return void
  */
-function gjmj4wp_setting_section_html_mailjet_api_version_send() {
+function gjmj4wp_setting_section_html_mailjet_api_version_send(): void {
 	$versions        = array(
 		'v3',
 		'v3.1',
@@ -345,8 +413,10 @@ function gjmj4wp_setting_section_html_mailjet_api_version_send() {
 
 /**
  * Mailjet API: Key
+ *
+ * @return void
  */
-function gjmj4wp_setting_section_html_mailjet_api_key() {
+function gjmj4wp_setting_section_html_mailjet_api_key(): void {
 	$current_key = get_option( GJMJ4WP_MAILJET_API_KEY );
 	?>
 	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_KEY ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_KEY ); ?>" value="<?php echo esc_html( $current_key ); ?>" />
@@ -355,8 +425,10 @@ function gjmj4wp_setting_section_html_mailjet_api_key() {
 
 /**
  * Mailjet API: Secret
+ *
+ * @return void
  */
-function gjmj4wp_setting_section_html_mailjet_api_secret() {
+function gjmj4wp_setting_section_html_mailjet_api_secret(): void {
 	$current_secret = get_option( GJMJ4WP_MAILJET_API_SECRET );
 	?>
 	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_SECRET ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_SECRET ); ?>" value="<?php echo esc_html( $current_secret ); ?>" />
@@ -375,8 +447,10 @@ function gjmj4wp_setting_section_html_mailjet_template( $args ): void {
 
 /**
  * Mailjet Template: Email From
+ *
+ * @return void
  */
-function gjmj4wp_setting_section_html_mailjet_template_email_from() {
+function gjmj4wp_setting_section_html_mailjet_template_email_from(): void {
 	$email_from = get_option( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM );
 	?>
 	<input type="email" name="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM ); ?>" value="<?php echo esc_html( $email_from ); ?>" />
@@ -385,11 +459,47 @@ function gjmj4wp_setting_section_html_mailjet_template_email_from() {
 
 /**
  * Mailjet Template: Email Name
+ *
+ * @return void
  */
-function gjmj4wp_setting_section_html_mailjet_template_email_name() {
+function gjmj4wp_setting_section_html_mailjet_template_email_name(): void {
 	$email_name = get_option( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME );
 	?>
 	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME ); ?>" value="<?php echo esc_html( $email_name ); ?>" />
+	<?php
+}
+
+/**
+ * Setting Section: WordPress
+ *
+ * @param array $args Display arguments.
+ *
+ * @return void
+ */
+function gjmj4wp_setting_section_html_wordpress( $args ): void {
+}
+
+/**
+ * WordPress: Confirmation Page ID (Success)
+ *
+ * @return void
+ */
+function gjmj4wp_setting_section_html_wordpress_page_id_confirmation_success(): void {
+	$page_id_success = get_option( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS );
+	?>
+	<input type="text" name="<?php echo esc_attr( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS ); ?>" id="<?php echo esc_attr( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS ); ?>" value="<?php echo esc_html( $page_id_success ); ?>" pattern="\d+" />
+	<?php
+}
+
+/**
+ * WordPress: Confirmation Page ID (Failure)
+ *
+ * @return void
+ */
+function gjmj4wp_setting_section_html_wordpress_page_id_confirmation_failure(): void {
+	$page_id_failure = get_option( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE );
+	?>
+	<input type="text" name="<?php echo esc_attr( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE ); ?>" id="<?php echo esc_attr( GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE ); ?>" value="<?php echo esc_html( $page_id_failure ); ?>" pattern="\d+" />
 	<?php
 }
 
