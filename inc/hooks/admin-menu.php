@@ -12,12 +12,15 @@ define( 'GJMJ4WP_MENU_SLUG', 'gjmj4wp-options' );
  *
  * @link https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
  */
-function gjmj4wp_options_page() {
+function gjmj4wp_options() {
+	/**
+	 * Menu
+	 */
 	$page_title = 'Mailjet for WordPress';
 	$menu_title = 'Mailjet for WordPress';
 	$capability = 'manage_options';
 	$menu_slug  = GJMJ4WP_MENU_SLUG;
-	$function   = 'gjmj4wp_options_page_html';
+	$function   = 'gjmj4wp_options_html';
 	$icon_url   = 'dashicons-email';
 	$position   = null;
 
@@ -32,12 +35,12 @@ function gjmj4wp_options_page() {
 	);
 }
 
-add_action( 'admin_menu', 'gjmj4wp_options_page' );
+add_action( 'admin_menu', 'gjmj4wp_options' );
 
 /**
  * Options Page HTML
  */
-function gjmj4wp_options_page_html() {
+function gjmj4wp_options_html() {
 	?>
 	<div class="wrap">
 		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
