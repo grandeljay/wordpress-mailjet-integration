@@ -16,6 +16,12 @@ define( 'GJMJ4WP_MAILJET_API_KEY', 'gjmj4wp-mailjet-api-key' );
 define( 'GJMJ4WP_MAILJET_API_SECRET', 'gjmj4wp-mailjet-api-secret' );
 
 define( 'GJMJ4WP_MAILJET_TEMPLATE_ID_CONFIRMATION', 'gjmj4wp-mailjet-template-id-confirmation' );
+define( 'GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM', 'gjmj4wp-mailjet-template-email-from' );
+define( 'GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME', 'gjmj4wp-mailjet-template-email-name' );
+
+/** WordPress */
+define( 'GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS', 'gjmj4wp-wordpress-page-id-confirmation-success' );
+define( 'GJMJ4WP_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE', 'gjmj4wp-wordpress-page-id-confirmation-failure' );
 
 /**
  * Settings
@@ -168,11 +174,59 @@ function gjmj4wp_settings() {
 				),
 			),
 		),
-	);
 
-	/**
-	 * Mailjet Template
-	 */
+		/**
+		 * Mailjet Template
+		 */
+
+		/** From Email */
+		array(
+			array(
+				'id'       => GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM,
+				'title'    => __( 'Email from', 'grandeljay-mailjet-for-wordpress' ),
+				'callback' => 'gjmj4wp_setting_section_html_mailjet_template_email_from',
+				'page'     => GJMJ4WP_SETTINGS_MAILJET_TEMPLATE,
+				'section'  => GJMJ4WP_SETTINGS_MAILJET_TEMPLATE,
+				'args'     => array(
+					'label_for' => GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM,
+				),
+			),
+			array(
+				'option_group' => GJMJ4WP_SETTINGS_MAILJET_TEMPLATE,
+				'option_name'  => GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM,
+				'args'         => array(
+					'type'         => 'string',
+					'description'  => 'The Mailjet Template From Email to use.',
+					'show_in_rest' => false,
+					'default'      => 'no-reply@' . isset( $_SERVER['HTTP_HOST'] ) ? sanitize_email( wp_unslash( $_SERVER['HTTP_HOST'] ) ) : 'domain.tld',
+				),
+			),
+		),
+
+		/** From Name */
+		array(
+			array(
+				'id'       => GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME,
+				'title'    => __( 'Email name', 'grandeljay-mailjet-for-wordpress' ),
+				'callback' => 'gjmj4wp_setting_section_html_mailjet_template_email_name',
+				'page'     => GJMJ4WP_SETTINGS_MAILJET_TEMPLATE,
+				'section'  => GJMJ4WP_SETTINGS_MAILJET_TEMPLATE,
+				'args'     => array(
+					'label_for' => GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME,
+				),
+			),
+			array(
+				'option_group' => GJMJ4WP_SETTINGS_MAILJET_TEMPLATE,
+				'option_name'  => GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME,
+				'args'         => array(
+					'type'         => 'string',
+					'description'  => 'The Mailjet Template Email Name to use.',
+					'show_in_rest' => false,
+					'default'      => get_bloginfo( 'name' ),
+				),
+			),
+		),
+	);
 
 	/** Confirmation ID */
 	foreach ( get_active_languages() as $language ) {
@@ -317,6 +371,26 @@ function gjmj4wp_setting_section_html_mailjet_api_secret() {
  * @return void
  */
 function gjmj4wp_setting_section_html_mailjet_template( $args ): void {
+}
+
+/**
+ * Mailjet Template: Email From
+ */
+function gjmj4wp_setting_section_html_mailjet_template_email_from() {
+	$email_from = get_option( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM );
+	?>
+	<input type="email" name="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM ); ?>" value="<?php echo esc_html( $email_from ); ?>" />
+	<?php
+}
+
+/**
+ * Mailjet Template: Email Name
+ */
+function gjmj4wp_setting_section_html_mailjet_template_email_name() {
+	$email_name = get_option( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME );
+	?>
+	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_NAME ); ?>" value="<?php echo esc_html( $email_name ); ?>" />
+	<?php
 }
 
 /**
