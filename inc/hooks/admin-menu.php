@@ -46,6 +46,9 @@ add_action( 'admin_menu', 'gjmj4wp_options' );
  * Options Page HTML
  */
 function gjmj4wp_options_html_mailjet_api() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
 	?>
 	<div class="wrap">
 		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
