@@ -5,6 +5,13 @@
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
+/**
+ * GJMJ4WP_MENU_SLUG
+ *
+ * Is also used when initializing sections and fields.
+ *
+ * @see admin-init.php
+ */
 define( 'GJMJ4WP_MENU_SLUG', 'gjmj4wp-options' );
 
 /**
@@ -47,11 +54,26 @@ function gjmj4wp_options_html() {
 
 		<form action="options.php" method="post">
 			<?php
-			settings_fields( GJMJ4WP_MENU_SLUG );
+			/**
+			 * Output nonce, action, and option_page fields for a settings page.
+			 *
+			 * @link https://developer.wordpress.org/reference/functions/settings_fields/
+			 */
+			settings_fields( 'gjmj4wp-options' );
 
+			/**
+			 * Prints out all settings sections added to a particular settings page.
+			 *
+			 * @link https://developer.wordpress.org/reference/functions/do_settings_sections/
+			 */
 			do_settings_sections( GJMJ4WP_MENU_SLUG );
 
-			submit_button( __( 'Save Settings', 'textdomain' ) );
+			/**
+			 * Echoes a submit button, with provided text and appropriate class(es).
+			 *
+			 * @link https://developer.wordpress.org/reference/functions/submit_button/
+			 */
+			submit_button( __( 'Save Settings', 'grandeljay-mailjet-for-wordpress' ) );
 			?>
 		</form>
 	</div>
