@@ -31,7 +31,7 @@ function gjmj4wp_settings() {
 		array(
 			'id'       => $gjmj4wp_sections_mailjet_api,
 			'title'    => __( 'Mailjet API', 'grandeljay-mailjet-for-wordpress' ),
-			'callback' => 'gjmj4wp_setting_section_mailjet_api_html',
+			'callback' => 'gjmj4wp_setting_section_html_mailjet_api',
 			'page'     => GJMJ4WP_SETTINGS_MAILJET_API,
 		),
 	);
@@ -58,7 +58,7 @@ function gjmj4wp_settings() {
 			array(
 				'id'       => GJMJ4WP_MAILJET_API_VERSION,
 				'title'    => __( 'Version', 'grandeljay-mailjet-for-wordpress' ),
-				'callback' => 'gjmj4wp_setting_section_mailjet_api_version_html',
+				'callback' => 'gjmj4wp_setting_section_html_mailjet_api_version',
 				'page'     => GJMJ4WP_SETTINGS_MAILJET_API,
 				'section'  => $gjmj4wp_sections_mailjet_api,
 				'args'     => array(
@@ -82,7 +82,7 @@ function gjmj4wp_settings() {
 			array(
 				'id'       => GJMJ4WP_MAILJET_API_VERSION_SEND,
 				'title'    => __( 'Version (Send)', 'grandeljay-mailjet-for-wordpress' ),
-				'callback' => 'gjmj4wp_setting_section_mailjet_api_version_send_html',
+				'callback' => 'gjmj4wp_setting_section_html_mailjet_api_version_send',
 				'page'     => GJMJ4WP_SETTINGS_MAILJET_API,
 				'section'  => $gjmj4wp_sections_mailjet_api,
 				'args'     => array(
@@ -106,7 +106,7 @@ function gjmj4wp_settings() {
 			array(
 				'id'       => GJMJ4WP_MAILJET_API_KEY,
 				'title'    => __( 'Key', 'grandeljay-mailjet-for-wordpress' ),
-				'callback' => 'gjmj4wp_setting_section_mailjet_api_key_html',
+				'callback' => 'gjmj4wp_setting_section_html_mailjet_api_key',
 				'page'     => GJMJ4WP_SETTINGS_MAILJET_API,
 				'section'  => $gjmj4wp_sections_mailjet_api,
 				'args'     => array(
@@ -130,7 +130,7 @@ function gjmj4wp_settings() {
 			array(
 				'id'       => GJMJ4WP_MAILJET_API_SECRET,
 				'title'    => __( 'Secret', 'grandeljay-mailjet-for-wordpress' ),
-				'callback' => 'gjmj4wp_setting_section_mailjet_api_secret_html',
+				'callback' => 'gjmj4wp_setting_section_html_mailjet_api_secret',
 				'page'     => GJMJ4WP_SETTINGS_MAILJET_API,
 				'section'  => $gjmj4wp_sections_mailjet_api,
 				'args'     => array(
@@ -177,13 +177,13 @@ add_action( 'admin_init', 'gjmj4wp_settings' );
  *
  * @return void
  */
-function gjmj4wp_setting_section_mailjet_api_html( $args ): void {
+function gjmj4wp_setting_section_html_mailjet_api( $args ): void {
 }
 
 /**
  * Mailjet API: Version
  */
-function gjmj4wp_setting_section_mailjet_api_version_html() {
+function gjmj4wp_setting_section_html_mailjet_api_version() {
 	$versions        = array(
 		'v2',
 		'v3',
@@ -208,7 +208,7 @@ function gjmj4wp_setting_section_mailjet_api_version_html() {
 /**
  * Mailjet API: Version (Send)
  */
-function gjmj4wp_setting_section_mailjet_api_version_send_html() {
+function gjmj4wp_setting_section_html_mailjet_api_version_send() {
 	$versions        = array(
 		'v3',
 		'v3.1',
@@ -231,7 +231,7 @@ function gjmj4wp_setting_section_mailjet_api_version_send_html() {
 /**
  * Mailjet API: Key
  */
-function gjmj4wp_setting_section_mailjet_api_key_html() {
+function gjmj4wp_setting_section_html_mailjet_api_key() {
 	$current_key = get_option( GJMJ4WP_MAILJET_API_KEY );
 	?>
 	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_KEY ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_KEY ); ?>" value="<?php echo esc_html( $current_key ); ?>" />
@@ -241,7 +241,7 @@ function gjmj4wp_setting_section_mailjet_api_key_html() {
 /**
  * Mailjet API: Secret
  */
-function gjmj4wp_setting_section_mailjet_api_secret_html() {
+function gjmj4wp_setting_section_html_mailjet_api_secret() {
 	$current_secret = get_option( GJMJ4WP_MAILJET_API_SECRET );
 	?>
 	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_SECRET ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_SECRET ); ?>" value="<?php echo esc_html( $current_secret ); ?>" />

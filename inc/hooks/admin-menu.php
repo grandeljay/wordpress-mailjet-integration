@@ -25,7 +25,7 @@ function gjmj4wp_options() {
 	$menu_title = 'Mailjet for WordPress';
 	$capability = 'manage_options';
 	$menu_slug  = 'gjmj4wp-options';
-	$function   = 'gjmj4wp_options_html';
+	$function   = 'gjmj4wp_options_html_mailjet_api';
 	$icon_url   = 'dashicons-email';
 	$position   = null;
 
@@ -45,7 +45,7 @@ add_action( 'admin_menu', 'gjmj4wp_options' );
 /**
  * Options Page HTML
  */
-function gjmj4wp_options_html() {
+function gjmj4wp_options_html_mailjet_api() {
 	?>
 	<div class="wrap">
 		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
