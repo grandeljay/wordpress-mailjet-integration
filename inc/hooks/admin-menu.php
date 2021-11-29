@@ -13,6 +13,7 @@
  * @see admin-init.php
  */
 define( 'GJMJ4WP_MENU_SLUG', 'gjmj4wp-options' );
+define( 'GJMJ4WP_SETTINGS_DEFAULT', 'gjmj4wp-options' );
 
 /**
  * Options Page
@@ -59,7 +60,7 @@ function gjmj4wp_options_html() {
 			 *
 			 * @link https://developer.wordpress.org/reference/functions/settings_fields/
 			 */
-			settings_fields( 'gjmj4wp-options' );
+			settings_fields( GJMJ4WP_SETTINGS_DEFAULT );
 
 			/**
 			 * Prints out all settings sections added to a particular settings page.

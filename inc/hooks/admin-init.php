@@ -65,7 +65,7 @@ function gjmj4wp_settings() {
 			 * @link https://developer.wordpress.org/reference/functions/register_setting/
 			 */
 			array(
-				'option_group' => 'gjmj4wp-options',
+				'option_group' => GJMJ4WP_SETTINGS_DEFAULT,
 				'option_name'  => $gjmj4wp_sections_mailjet_api_version,
 				'args'         => array(
 					'type'         => 'array',
