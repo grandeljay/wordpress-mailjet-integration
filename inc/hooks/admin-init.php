@@ -105,7 +105,6 @@ add_action( 'admin_init', 'gjmj4wp_settings' );
  * @return void
  */
 function gjmj4wp_setting_section_mailjet_api_html( $args ): void {
-	echo 'gjmj4wp_setting_section_mailjet_api_html';
 }
 
 /**
