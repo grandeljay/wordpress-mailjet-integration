@@ -10,7 +10,13 @@
  *
  * @see admin-init.php
  */
+
+/** Mailjet */
 define( 'GJMJ4WP_SETTINGS_MAILJET_API', 'gjmj4wp-mailjet-api' );
+define( 'GJMJ4WP_SETTINGS_MAILJET_TEMPLATE', 'gjmj4wp-mailjet-template' );
+
+/** WPML */
+define( 'GJMJ4WP_SETTINGS_WPML', 'gjmj4wp-wpml' );
 
 /**
  * Options Page
@@ -55,28 +61,29 @@ function gjmj4wp_options_html_mailjet_api() {
 
 		<form action="options.php" method="post">
 			<?php
-			/**
-			 * Output nonce, action, and option_page fields for a settings page.
-			 *
-			 * @link https://developer.wordpress.org/reference/functions/settings_fields/
-			 */
 			settings_fields( GJMJ4WP_SETTINGS_MAILJET_API );
-
-			/**
-			 * Prints out all settings sections added to a particular settings page.
-			 *
-			 * @link https://developer.wordpress.org/reference/functions/do_settings_sections/
-			 */
 			do_settings_sections( GJMJ4WP_SETTINGS_MAILJET_API );
-
-			/**
-			 * Echoes a submit button, with provided text and appropriate class(es).
-			 *
-			 * @link https://developer.wordpress.org/reference/functions/submit_button/
-			 */
 			submit_button( __( 'Save Mailjet API Settings', 'grandeljay-mailjet-for-wordpress' ) );
 			?>
 		</form>
+
+		<form action="options.php" method="post">
+			<?php
+			settings_fields( GJMJ4WP_SETTINGS_MAILJET_TEMPLATE );
+			do_settings_sections( GJMJ4WP_SETTINGS_MAILJET_TEMPLATE );
+			submit_button( __( 'Save Mailjet Template Settings', 'grandeljay-mailjet-for-wordpress' ) );
+			?>
+		</form>
+
+		<?php if ( is_wpml_active() ) { ?>
+			<form action="options.php" method="post">
+				<?php
+				settings_fields( GJMJ4WP_SETTINGS_WPML );
+				do_settings_sections( GJMJ4WP_SETTINGS_WPML );
+				submit_button( __( 'Save Mailjet Settings', 'grandeljay-mailjet-for-wordpress' ) );
+				?>
+			</form>
+		<?php } ?>
 	</div>
 	<?php
 }

@@ -13,7 +13,7 @@
 function get_page_id_subscribe_success(): int {
 	$id = 0;
 
-	if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
+	if ( is_wpml_active() ) {
 		$id = apply_filters(
 			'wpml_object_id',
 			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_SUCCESS,
@@ -34,7 +34,7 @@ function get_page_id_subscribe_success(): int {
 function get_page_id_subscribe_failure(): int {
 	$id = 0;
 
-	if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
+	if ( is_wpml_active() ) {
 		$id = apply_filters(
 			'wpml_object_id',
 			GJMJ4WP_PAGE_EMAIL_CONFIRMATION_FAILURE,
