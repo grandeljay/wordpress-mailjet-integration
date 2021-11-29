@@ -11,6 +11,7 @@
 define( 'GJMJ4WP_MAILJET_API_VERSION', 'gjmj4wp-mailjet-api-version' );
 define( 'GJMJ4WP_MAILJET_API_VERSION_SEND', 'gjmj4wp-mailjet-api-version-send' );
 define( 'GJMJ4WP_MAILJET_API_KEY', 'gjmj4wp-mailjet-api-key' );
+define( 'GJMJ4WP_MAILJET_API_SECRET', 'gjmj4wp-mailjet-api-secret' );
 
 /**
  * Settings
@@ -100,7 +101,7 @@ function gjmj4wp_settings() {
 			),
 		),
 
-		/** API Key */
+		/** Key */
 		array(
 			array(
 				'id'       => GJMJ4WP_MAILJET_API_KEY,
@@ -118,6 +119,30 @@ function gjmj4wp_settings() {
 				'args'         => array(
 					'type'         => 'string',
 					'description'  => 'The Mailjet API Key to use.',
+					'show_in_rest' => false,
+					'default'      => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+				),
+			),
+		),
+
+		/** Secret */
+		array(
+			array(
+				'id'       => GJMJ4WP_MAILJET_API_SECRET,
+				'title'    => __( 'Secret', 'grandeljay-mailjet-for-wordpress' ),
+				'callback' => 'gjmj4wp_setting_section_mailjet_api_secret_html',
+				'page'     => GJMJ4WP_MENU_SLUG,
+				'section'  => $gjmj4wp_sections_mailjet_api,
+				'args'     => array(
+					'label_for' => GJMJ4WP_MAILJET_API_SECRET,
+				),
+			),
+			array(
+				'option_group' => GJMJ4WP_SETTINGS_DEFAULT,
+				'option_name'  => GJMJ4WP_MAILJET_API_SECRET,
+				'args'         => array(
+					'type'         => 'string',
+					'description'  => 'The Mailjet API Secret to use.',
 					'show_in_rest' => false,
 					'default'      => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 				),
@@ -210,5 +235,15 @@ function gjmj4wp_setting_section_mailjet_api_key_html() {
 	$current_key = get_option( GJMJ4WP_MAILJET_API_KEY );
 	?>
 	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_KEY ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_KEY ); ?>" value="<?php echo esc_html( $current_key ); ?>" />
+	<?php
+}
+
+/**
+ * Mailjet API: Secret
+ */
+function gjmj4wp_setting_section_mailjet_api_secret_html() {
+	$current_secret = get_option( GJMJ4WP_MAILJET_API_SECRET );
+	?>
+	<input type="text" name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_SECRET ); ?>" id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_SECRET ); ?>" value="<?php echo esc_html( $current_secret ); ?>" />
 	<?php
 }
