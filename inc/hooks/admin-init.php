@@ -6,6 +6,12 @@
  */
 
 /**
+ * Fields
+ */
+define( 'GJMJ4WP_MAILJET_API_VERSION', 'gjmj4wp-mailjet-api-version' );
+define( 'GJMJ4WP_MAILJET_API_VERSION_SEND', 'gjmj4wp-mailjet-api-version-send' );
+
+/**
  * Settings
  *
  * @link https://developer.wordpress.org/apis/handbook/settings/
@@ -40,38 +46,55 @@ function gjmj4wp_settings() {
 	/**
 	 * Fields
 	 */
-	$gjmj4wp_sections_mailjet_api_version = 'gjmj4wp-mailjet-api-version';
-
 	$gjmj4wp_fields = array(
-		/** Mailjet API */
+		/**
+		 * Mailjet API
+		 */
+
+		/** Version */
 		array(
-			/**
-			 * Add Field
-			 *
-			 * @link https://developer.wordpress.org/reference/functions/add_settings_field/
-			 */
 			array(
-				'id'       => $gjmj4wp_sections_mailjet_api_version,
+				'id'       => GJMJ4WP_MAILJET_API_VERSION,
 				'title'    => __( 'Version', 'grandeljay-mailjet-for-wordpress' ),
 				'callback' => 'gjmj4wp_setting_section_mailjet_api_version_html',
 				'page'     => GJMJ4WP_MENU_SLUG,
 				'section'  => $gjmj4wp_sections_mailjet_api,
-				'args'     => array(),
+				'args'     => array(
+					'label_for' => GJMJ4WP_MAILJET_API_VERSION,
+				),
 			),
-
-			/**
-			 * Register Setting
-			 *
-			 * @link https://developer.wordpress.org/reference/functions/register_setting/
-			 */
 			array(
 				'option_group' => GJMJ4WP_SETTINGS_DEFAULT,
-				'option_name'  => $gjmj4wp_sections_mailjet_api_version,
+				'option_name'  => GJMJ4WP_MAILJET_API_VERSION,
 				'args'         => array(
 					'type'         => 'array',
 					'description'  => 'A List of available versions for the API.',
 					'show_in_rest' => false,
 					'default'      => 'v3',
+				),
+			),
+		),
+
+		/** Version (Send) */
+		array(
+			array(
+				'id'       => GJMJ4WP_MAILJET_API_VERSION_SEND,
+				'title'    => __( 'Version (Send)', 'grandeljay-mailjet-for-wordpress' ),
+				'callback' => 'gjmj4wp_setting_section_mailjet_api_version_send_html',
+				'page'     => GJMJ4WP_MENU_SLUG,
+				'section'  => $gjmj4wp_sections_mailjet_api,
+				'args'     => array(
+					'label_for' => GJMJ4WP_MAILJET_API_VERSION_SEND,
+				),
+			),
+			array(
+				'option_group' => GJMJ4WP_SETTINGS_DEFAULT,
+				'option_name'  => GJMJ4WP_MAILJET_API_VERSION_SEND,
+				'args'         => array(
+					'type'         => 'array',
+					'description'  => 'A List of available versions for the Send API.',
+					'show_in_rest' => false,
+					'default'      => 'v3.1',
 				),
 			),
 		),
@@ -109,23 +132,48 @@ function gjmj4wp_setting_section_mailjet_api_html( $args ): void {
 
 /**
  * Mailjet API: Version
- *
- * @link https://developer.wordpress.org/reference/functions/register_setting/
  */
 function gjmj4wp_setting_section_mailjet_api_version_html() {
 	$versions        = array(
 		'v2',
 		'v3',
 	);
-	$current_version = get_option( 'gjmj4wp-mailjet-api-version' );
+	$current_version = get_option( GJMJ4WP_MAILJET_API_VERSION );
 	$field_value     = isset( $versions[ $current_version ] ) ? $versions[ $current_version ] : '';
 	?>
-	<select name="gjmj4wp-mailjet-api-version">
+	<select name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_VERSION ); ?>"
+			id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_VERSION ); ?>"
+	>
 		<?php foreach ( $versions as $version ) { ?>
-			<option value="<?php echo $version; ?>"
+			<option value="<?php echo esc_attr( $version ); ?>"
 					<?php selected( $version, $current_version ); ?>
 			>
-				<?php echo $version; ?>
+				<?php echo esc_html( $version ); ?>
+			</option>
+		<?php } ?>
+	</select>
+	<?php
+}
+
+/**
+ * Mailjet API: Version (Send)
+ */
+function gjmj4wp_setting_section_mailjet_api_version_send_html() {
+	$versions        = array(
+		'v3',
+		'v3.1',
+	);
+	$current_version = get_option( GJMJ4WP_MAILJET_API_VERSION_SEND );
+	$field_value     = isset( $versions[ $current_version ] ) ? $versions[ $current_version ] : '';
+	?>
+	<select name="<?php echo esc_attr( GJMJ4WP_MAILJET_API_VERSION_SEND ); ?>"
+			id="<?php echo esc_attr( GJMJ4WP_MAILJET_API_VERSION_SEND ); ?>"
+	>
+		<?php foreach ( $versions as $version ) { ?>
+			<option value="<?php echo esc_attr( $version ); ?>"
+					<?php selected( $version, $current_version ); ?>
+			>
+				<?php echo esc_html( $version ); ?>
 			</option>
 		<?php } ?>
 	</select>
