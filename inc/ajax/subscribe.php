@@ -104,7 +104,7 @@ function gjmj4wp_ajax_subscribe(): void {
 		/**
 		 * Sending a confirmation email has succeeded
 		 */
-		echo wp_send_json_success(
+		wp_send_json_success(
 			array(
 				'message' => esc_html__( 'Please confirm your email address.', 'grandeljay-mailjet-for-wordpress' ),
 			),
@@ -113,7 +113,7 @@ function gjmj4wp_ajax_subscribe(): void {
 		/**
 		 * Sending a confirmation email has failed
 		 */
-		echo wp_send_json_error(
+		wp_send_json_error(
 			$email_confirmation->getData()
 		);
 	}
