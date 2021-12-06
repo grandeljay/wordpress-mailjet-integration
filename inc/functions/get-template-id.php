@@ -15,7 +15,7 @@ function gjmj4wp_get_template_id(): int {
 
 	foreach ( get_active_languages() as $language ) {
 		if ( ICL_LANGUAGE_CODE === $language['code'] ) {
-			$template_id = constant( 'GJMJ4WP_MAILJET_TEMPLATE_ID_CONFIRMATION_' . strtoupper( $language['code'] ) );
+			$template_id = get_option( GJMJ4WP_MAILJET_TEMPLATE_ID_CONFIRMATION . '-' . $language['code'] );
 			break;
 		}
 	}
