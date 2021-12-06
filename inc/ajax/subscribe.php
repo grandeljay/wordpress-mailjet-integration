@@ -27,7 +27,7 @@ function gjmj4wp_ajax_subscribe(): void {
 		get_option( GJMJ4WP_MAILJET_API_SECRET ),
 		true,
 		array(
-			'version' => get_option( GJMJ4WP_MAILJET_API_VERSION_SEND ),
+			'version' => get_option( GJMJ4WP_MAILJET_API_VERSION ),
 		)
 	);
 
@@ -46,7 +46,7 @@ function gjmj4wp_ajax_subscribe(): void {
 	$confirmation_link       = get_site_url() . '/?gjmp4wp-email=' . $email . '&gjmp4wp-checksum=' . $checksum . '&gjmp4wp-nonce=' . $nonce;
 	$email_confirmation_body = array();
 
-	switch ( GJMJ4WP_SEND_API_VERSION ) {
+	switch ( get_option( GJMJ4WP_MAILJET_API_VERSION_SEND ) ) {
 		case 'v3':
 			$email_confirmation_body = array(
 				'FromEmail'           => get_option( GJMJ4WP_MAILJET_TEMPLATE_EMAIL_FROM ),
