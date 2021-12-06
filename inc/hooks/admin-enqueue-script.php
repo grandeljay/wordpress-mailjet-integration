@@ -25,4 +25,5 @@ function wpdocs_selectively_enqueue_admin_script( $hook ): void {
 		filemtime( plugin_dir_path( __DIR__ ) . 'assets/css/admin.css' )
 	);
 }
+
 add_action( 'admin_enqueue_scripts', 'wpdocs_selectively_enqueue_admin_script' );
