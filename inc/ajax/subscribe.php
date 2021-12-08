@@ -100,6 +100,19 @@ function gjmj4wp_ajax_subscribe(): void {
 		),
 	);
 
+	/**
+	 * Fallback to Send API v3 if v3.1 fails
+	 *
+	 * Sometimes v3.1 just returns an empty response, we'll fallback to v3
+	 * here and try again.
+	 */
+	if ( empty( $email_confirmation->getData() ) ) {
+		update_option( GJMJ4WP_MAILJET_API_VERSION_SEND, 'v3' );
+
+		gjmj4wp_ajax_subscribe();
+		wp_die();
+	}
+
 	if ( $email_confirmation->success() ) {
 		/**
 		 * Sending a confirmation email has succeeded
