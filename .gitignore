@@ -1,6 +1,5 @@
 *.code-workspace
 /.vscode
-/inc/config.php
 
 # dev dependencies
 /vendor/bin

@@ -68,11 +68,11 @@ function gjmj4wp_confirm_email(): void {
 	 * Add Contact
 	 */
 	$mailjet = new \Mailjet\Client(
-		GJMJ4WP_API_KEY,
-		GJMJ4WP_API_SECRET,
+		get_option( GJMJ4WP_MAILJET_API_KEY ),
+		get_option( GJMJ4WP_MAILJET_API_SECRET ),
 		true,
 		array(
-			'version' => GJMJ4WP_API_VERSION,
+			'version' => get_option( GJMJ4WP_MAILJET_API_VERSION ),
 		)
 	);
 
