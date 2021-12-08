@@ -7,7 +7,7 @@
  * @wordpress-plugin
  * Plugin Name:       Mailjet for WordPress
  * Description:       A simple integration for Mailjet into WordPress.
- * Version:           0.1.1
+ * Version:           0.2.1
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Jay Trees
