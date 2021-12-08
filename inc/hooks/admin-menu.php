@@ -12,29 +12,29 @@
  */
 
 /** Mailjet */
-define( 'GJMJ4WP_SETTINGS_MAILJET_API', 'gjmj4wp-mailjet-api' );
-define( 'GJMJ4WP_SETTINGS_MAILJET_TEMPLATE', 'gjmj4wp-mailjet-template' );
+define( 'WPMJI_SETTINGS_MAILJET_API', 'wpmji-mailjet-api' );
+define( 'WPMJI_SETTINGS_MAILJET_TEMPLATE', 'wpmji-mailjet-template' );
 
 /** WordPress */
-define( 'GJMJ4WP_SETTINGS_WORDPRESS', 'gjmj4wp-wordpress' );
+define( 'WPMJI_SETTINGS_WORDPRESS', 'wpmji-wordpress' );
 
 /** WPML */
-define( 'GJMJ4WP_SETTINGS_WPML', 'gjmj4wp-wpml' );
+define( 'WPMJI_SETTINGS_WPML', 'wpmji-wpml' );
 
 /**
  * Options Page
  *
  * @link https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
  */
-function gjmj4wp_options() {
+function wpmji_options() {
 	/**
 	 * Menu
 	 */
 	$page_title = 'WP Mailjet Integration';
 	$menu_title = 'WP Mailjet Integration';
 	$capability = 'manage_options';
-	$menu_slug  = 'gjmj4wp-options';
-	$function   = 'gjmj4wp_options_html_mailjet_api';
+	$menu_slug  = 'wpmji-options';
+	$function   = 'wpmji_options_html_mailjet_api';
 	$icon_url   = 'dashicons-email';
 	$position   = null;
 
@@ -49,12 +49,12 @@ function gjmj4wp_options() {
 	);
 }
 
-add_action( 'admin_menu', 'gjmj4wp_options' );
+add_action( 'admin_menu', 'wpmji_options' );
 
 /**
  * Options Page HTML
  */
-function gjmj4wp_options_html_mailjet_api() {
+function wpmji_options_html_mailjet_api() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
@@ -64,24 +64,24 @@ function gjmj4wp_options_html_mailjet_api() {
 
 		<form action="options.php" method="post">
 			<?php
-			settings_fields( GJMJ4WP_SETTINGS_MAILJET_API );
-			do_settings_sections( GJMJ4WP_SETTINGS_MAILJET_API );
+			settings_fields( WPMJI_SETTINGS_MAILJET_API );
+			do_settings_sections( WPMJI_SETTINGS_MAILJET_API );
 			submit_button( __( 'Save Mailjet API Settings', 'grandeljay-wp-mailjet-integration' ) );
 			?>
 		</form>
 
 		<form action="options.php" method="post">
 			<?php
-			settings_fields( GJMJ4WP_SETTINGS_MAILJET_TEMPLATE );
-			do_settings_sections( GJMJ4WP_SETTINGS_MAILJET_TEMPLATE );
+			settings_fields( WPMJI_SETTINGS_MAILJET_TEMPLATE );
+			do_settings_sections( WPMJI_SETTINGS_MAILJET_TEMPLATE );
 			submit_button( __( 'Save Mailjet Template Settings', 'grandeljay-wp-mailjet-integration' ) );
 			?>
 		</form>
 
 		<form action="options.php" method="post">
 			<?php
-			settings_fields( GJMJ4WP_SETTINGS_WORDPRESS );
-			do_settings_sections( GJMJ4WP_SETTINGS_WORDPRESS );
+			settings_fields( WPMJI_SETTINGS_WORDPRESS );
+			do_settings_sections( WPMJI_SETTINGS_WORDPRESS );
 			submit_button( __( 'Save WordPress Settings', 'grandeljay-wp-mailjet-integration' ) );
 			?>
 		</form>
@@ -89,8 +89,8 @@ function gjmj4wp_options_html_mailjet_api() {
 		<?php if ( is_wpml_active() ) { ?>
 			<form action="options.php" method="post">
 				<?php
-				settings_fields( GJMJ4WP_SETTINGS_WPML );
-				do_settings_sections( GJMJ4WP_SETTINGS_WPML );
+				settings_fields( WPMJI_SETTINGS_WPML );
+				do_settings_sections( WPMJI_SETTINGS_WPML );
 				submit_button( __( 'Save WPML Settings', 'grandeljay-wp-mailjet-integration' ) );
 				?>
 			</form>

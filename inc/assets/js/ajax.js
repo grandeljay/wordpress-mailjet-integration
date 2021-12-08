@@ -3,24 +3,24 @@
  */
 
 jQuery( document ).ready( function( $ ) {
-	$( '.gjmj4wp-subscribe' ).submit( function( event ) {
+	$( '.wpmji-subscribe' ).submit( function( event ) {
 		event.preventDefault();
 
 		var form_submit = $( this );
 		form_submit.hide();
 
-		var form_response = $( '.gjmj4wp-response' );
-		form_response.text(gjmj4wp.text_loading);
+		var form_response = $( '.wpmji-response' );
+		form_response.text(wpmji.text_loading);
 
 		$
 		.post(
-			gjmj4wp.ajax_url,
+			wpmji.ajax_url,
 			{
-				_ajax_nonce: gjmj4wp.nonce,
-				action: 'gjmj4wp_ajax_subscribe',
+				_ajax_nonce: wpmji.nonce,
+				action: 'wpmji_ajax_subscribe',
 
 				email: $( '[name="email"]' ).val(),
-				language: gjmj4wp.language,
+				language: wpmji.language,
 			}
 		)
 		.done( function( response ) {

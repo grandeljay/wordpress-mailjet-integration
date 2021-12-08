@@ -16,18 +16,18 @@ After cloning this repository you can get started after 2 easy steps.
 
 1. Add shortcode
 
-    Add `[mailjet_for_wordpress]` anywhere to see the subscription form.
+    Add `[wp_mailjet_integration]` anywhere to see the subscription form.
 
 ## Configuration
 
 ### Shortcodes
 So far the following shortcodes are available.
 
-* `[mailjet_for_wordpress]`
+* `[wp_mailjet_integration]`
 
   The subscription form
 
-* `[mailjet_for_wordpress_response]`
+* `[wp_mailjet_integration_response]`
 
   The response after clicking the confirmation link. Put this in your Success/Failure pages.
 

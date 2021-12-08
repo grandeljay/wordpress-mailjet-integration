@@ -33,17 +33,17 @@ define( 'GJMF4WP_PLUGIN', __FILE__ );
  *
  * @return void
  */
-function gjmj4wp_initialize() {
+function wpmji_initialize() {
 	include 'vendor/autoload.php';
 	include 'inc/functions/auto-include.php';
 	include 'inc/config.php';
 
-	define( 'GJMJ4WP', __DIR__ );
+	define( 'WPMJI', __DIR__ );
 
-	gjmj4wp_auto_include( GJMJ4WP . '/inc/functions' );
-	gjmj4wp_auto_include( GJMJ4WP . '/inc/shortcodes' );
-	gjmj4wp_auto_include( GJMJ4WP . '/inc/hooks' );
-	gjmj4wp_auto_include( GJMJ4WP . '/inc/ajax' );
+	wpmji_auto_include( WPMJI . '/inc/functions' );
+	wpmji_auto_include( WPMJI . '/inc/shortcodes' );
+	wpmji_auto_include( WPMJI . '/inc/hooks' );
+	wpmji_auto_include( WPMJI . '/inc/ajax' );
 }
 
-add_action( 'plugins_loaded', 'gjmj4wp_initialize' );
+add_action( 'plugins_loaded', 'wpmji_initialize' );

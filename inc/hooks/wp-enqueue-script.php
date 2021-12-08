@@ -10,12 +10,12 @@
  *
  * @return void
  */
-function gjmj4wp_wp_enqueue_scripts(): void {
+function wpmji_wp_enqueue_scripts(): void {
 	/**
 	 * Styles
 	 */
 	wp_enqueue_style(
-		'gjmj4wp-default-css',
+		'wpmji-default-css',
 		plugins_url( 'assets/css/default.css', __DIR__ ),
 		array(),
 		filemtime( plugin_dir_path( __DIR__ ) . 'assets/css/default.css' )
@@ -25,23 +25,23 @@ function gjmj4wp_wp_enqueue_scripts(): void {
 	 * Scripts
 	 */
 	wp_enqueue_script(
-		'gjmj4wp-ajax',
+		'wpmji-ajax',
 		plugins_url( 'assets/js/ajax.js', __DIR__ ),
 		array( 'jquery' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'assets/js/ajax.js' ),
 		true
 	);
 	wp_localize_script(
-		'gjmj4wp-ajax',
-		'gjmj4wp',
+		'wpmji-ajax',
+		'wpmji',
 		array(
 			'ajax_url'     => admin_url( 'admin-ajax.php' ),
-			'nonce'        => wp_create_nonce( 'GJMJ4WP-AJAX' ),
-			'language'     => GJMJ4WP_LANGUAGE_DEFAULT,
+			'nonce'        => wp_create_nonce( 'WPMJI-AJAX' ),
+			'language'     => WPMJI_LANGUAGE_DEFAULT,
 
 			'text_loading' => __( 'Loading. Please wait...', 'grandeljay-wp-mailjet-integration' ),
 		)
 	);
 }
 
-add_action( 'wp_enqueue_scripts', 'gjmj4wp_wp_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'wpmji_wp_enqueue_scripts' );

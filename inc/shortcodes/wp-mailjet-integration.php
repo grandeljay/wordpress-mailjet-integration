@@ -13,10 +13,10 @@
  *
  * @return string
  */
-function gjmj4wp_shortcode_mailjet_for_wordpress( $atts = array(), $content = '' ): string {
-	$content .= '<div class="gjmj4wp-response"></div>';
+function wpmji_shortcode_wp_mailjet_integration( $atts = array(), $content = '' ): string {
+	$content .= '<div class="wpmji-response"></div>';
 
-	$content .= '<form class="gjmj4wp-subscribe" method="post">';
+	$content .= '<form class="wpmji-subscribe" method="post">';
 	$content .= '<input type="email" name="email" placeholder="' . __( 'Email address', 'grandeljay-wp-mailjet-integration' ) . '">';
 	$content .= '<input type="submit" value="' . __( 'Subscribe', 'grandeljay-wp-mailjet-integration' ) . '">';
 	$content .= '</form>';
@@ -24,4 +24,4 @@ function gjmj4wp_shortcode_mailjet_for_wordpress( $atts = array(), $content = ''
 	return $content;
 }
 
-add_shortcode( 'mailjet_for_wordpress', 'gjmj4wp_shortcode_mailjet_for_wordpress' );
+add_shortcode( 'wp_mailjet_integration', 'wpmji_shortcode_wp_mailjet_integration' );

@@ -13,12 +13,12 @@
  *
  * @return string
  */
-function gjmj4wp_shortcode_mailjet_for_wordpress_response( $atts = array(), $content = '' ): string {
+function wpmji_shortcode_wp_mailjet_integration_response( $atts = array(), $content = '' ): string {
 	$response = '';
 
 	// phpcs:disable WordPress.Security.NonceVerification.Recommended
-	if ( isset( $_GET['gjmj4wp-response'] ) ) {
-		$response .= $_GET['gjmj4wp-response'];
+	if ( isset( $_GET['wpmji-response'] ) ) {
+		$response .= $_GET['wpmji-response'];
 	}
 	if ( isset( $_GET['ErrorMessage'] ) ) {
 		$response .= '<strong>' . $_GET['StatusCode'] . '</strong> - ';
@@ -26,9 +26,9 @@ function gjmj4wp_shortcode_mailjet_for_wordpress_response( $atts = array(), $con
 	}
 	// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
-	$content .= '<div class="gjmj4wp-response">' . $response . '</div>';
+	$content .= '<div class="wpmji-response">' . $response . '</div>';
 
 	return $content;
 }
 
-add_shortcode( 'mailjet_for_wordpress_response', 'gjmj4wp_shortcode_mailjet_for_wordpress_response' );
+add_shortcode( 'wp_mailjet_integration_response', 'wpmji_shortcode_wp_mailjet_integration_response' );

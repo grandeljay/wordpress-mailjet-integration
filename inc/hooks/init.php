@@ -8,7 +8,7 @@
 /**
  * Load Textdomain
  */
-function gjmj4wp_load_textdomain() {
+function wpmji_load_textdomain() {
 	load_plugin_textdomain(
 		'grandeljay-wp-mailjet-integration',
 		false,
@@ -16,4 +16,4 @@ function gjmj4wp_load_textdomain() {
 	);
 }
 
-add_action( 'init', 'gjmj4wp_load_textdomain' );
+add_action( 'init', 'wpmji_load_textdomain' );

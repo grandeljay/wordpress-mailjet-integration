@@ -10,7 +10,7 @@
  *
  * @return void
  */
-function gjmj4wp_confirm_email(): void {
+function wpmji_confirm_email(): void {
 	/**
 	 * Verify fields
 	 */
@@ -34,7 +34,7 @@ function gjmj4wp_confirm_email(): void {
 	if ( false === wp_verify_nonce( $_GET['gjmp4wp-nonce'], 'newsletter-subscribe' ) ) {
 		wp_safe_redirect(
 			add_query_arg(
-				rawurlencode( 'gjmj4wp-response' ),
+				rawurlencode( 'wpmji-response' ),
 				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-wp-mailjet-integration' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
@@ -46,12 +46,12 @@ function gjmj4wp_confirm_email(): void {
 	 * Verify checksum
 	 */
 	$s_doc_root = isset( $_SERVER['DOCUMENT_ROOT'] ) ? $_SERVER['DOCUMENT_ROOT'] : '';
-	$checksum   = sha1( 'GJMJ4WP-' . $s_doc_root . '-' . $_GET['gjmp4wp-email'] );
+	$checksum   = sha1( 'WPMJI-' . $s_doc_root . '-' . $_GET['gjmp4wp-email'] );
 
 	if ( $checksum !== $_GET['gjmp4wp-checksum'] ) {
 		wp_safe_redirect(
 			add_query_arg(
-				rawurlencode( 'gjmj4wp-response' ),
+				rawurlencode( 'wpmji-response' ),
 				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-wp-mailjet-integration' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
@@ -68,11 +68,11 @@ function gjmj4wp_confirm_email(): void {
 	 * Add Contact
 	 */
 	$mailjet = new \Mailjet\Client(
-		get_option( GJMJ4WP_MAILJET_API_KEY ),
-		get_option( GJMJ4WP_MAILJET_API_SECRET ),
+		get_option( WPMJI_MAILJET_API_KEY ),
+		get_option( WPMJI_MAILJET_API_SECRET ),
 		true,
 		array(
-			'version' => get_option( GJMJ4WP_MAILJET_API_VERSION ),
+			'version' => get_option( WPMJI_MAILJET_API_VERSION ),
 		)
 	);
 
@@ -94,10 +94,10 @@ function gjmj4wp_confirm_email(): void {
 	 * @link https://dev.mailjet.com/email/reference/contacts/contact-properties/
 	 */
 	$properties_update_body = array(
-		'Data' => array( GJMJ4WP_CONTACT_PROPERTIES ),
+		'Data' => array( WPMJI_CONTACT_PROPERTIES ),
 	);
 
-	if ( defined( 'GJMJ4WP_CONTACT_PROPERTIES' ) && count( GJMJ4WP_CONTACT_PROPERTIES ) > 0 ) {
+	if ( defined( 'WPMJI_CONTACT_PROPERTIES' ) && count( WPMJI_CONTACT_PROPERTIES ) > 0 ) {
 		$properties_update = $mailjet->put(
 			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			\Mailjet\Resources::$Contactdata,
@@ -136,4 +136,4 @@ function gjmj4wp_confirm_email(): void {
 
 }
 
-add_action( 'wp', 'gjmj4wp_confirm_email' );
+add_action( 'wp', 'wpmji_confirm_email' );

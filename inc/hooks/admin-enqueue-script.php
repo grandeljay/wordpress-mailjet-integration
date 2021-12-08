@@ -11,7 +11,7 @@
  * @param string $hook Hook suffix for the current admin page.
  */
 function wpdocs_selectively_enqueue_admin_script( $hook ): void {
-	if ( 'toplevel_page_gjmj4wp-options' !== $hook ) {
+	if ( 'toplevel_page_wpmji-options' !== $hook ) {
 		return;
 	}
 
@@ -19,7 +19,7 @@ function wpdocs_selectively_enqueue_admin_script( $hook ): void {
 	 * Styles
 	 */
 	wp_enqueue_style(
-		'gjmj4wp-admin-css',
+		'wpmji-admin-css',
 		plugins_url( 'assets/css/admin.css', __DIR__ ),
 		array(),
 		filemtime( plugin_dir_path( __DIR__ ) . 'assets/css/admin.css' )
