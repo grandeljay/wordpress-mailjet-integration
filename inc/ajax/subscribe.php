@@ -12,7 +12,7 @@
  *
  * @return void
  */
-function wpmji_ajax_subscribe(): void {
+function gjmji_ajax_subscribe(): void {
 	check_ajax_referer( 'WPMJI-AJAX' );
 
 	if ( ! isset( $_POST['email'] ) ) {
@@ -57,7 +57,7 @@ function wpmji_ajax_subscribe(): void {
 						'Email' => $email,
 					),
 				),
-				'MJ-TemplateID'       => wpmji_get_template_id(),
+				'MJ-TemplateID'       => gjmji_get_template_id(),
 				'MJ-TemplateLanguage' => true,
 				'Vars'                => array(
 					'approximatename'  => explode( '@', $email )[0],
@@ -79,7 +79,7 @@ function wpmji_ajax_subscribe(): void {
 								'Email' => $email,
 							),
 						),
-						'TemplateID'       => wpmji_get_template_id(),
+						'TemplateID'       => gjmji_get_template_id(),
 						'TemplateLanguage' => true,
 						'Subject'          => 'Confirm your email',
 						'Variables'        => array(
@@ -109,7 +109,7 @@ function wpmji_ajax_subscribe(): void {
 	if ( empty( $email_confirmation->getData() ) ) {
 		update_option( WPMJI_MAILJET_API_VERSION_SEND, 'v3' );
 
-		wpmji_ajax_subscribe();
+		gjmji_ajax_subscribe();
 		wp_die();
 	}
 
@@ -119,7 +119,7 @@ function wpmji_ajax_subscribe(): void {
 		 */
 		wp_send_json_success(
 			array(
-				'message' => esc_html__( 'Please confirm your email address.', 'grandeljay-wp-mailjet-integration' ),
+				'message' => esc_html__( 'Please confirm your email address.', 'grandeljay-mailjet-integration' ),
 			),
 		);
 	} else {
@@ -134,5 +134,5 @@ function wpmji_ajax_subscribe(): void {
 	wp_die();
 }
 
-add_action( 'wp_ajax_wpmji_ajax_subscribe', 'wpmji_ajax_subscribe' );
-add_action( 'wp_ajax_nopriv_wpmji_ajax_subscribe', 'wpmji_ajax_subscribe' );
+add_action( 'wp_ajax_gjmji_ajax_subscribe', 'gjmji_ajax_subscribe' );
+add_action( 'wp_ajax_nopriv_gjmji_ajax_subscribe', 'gjmji_ajax_subscribe' );

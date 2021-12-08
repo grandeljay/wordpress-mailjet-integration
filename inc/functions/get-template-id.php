@@ -10,7 +10,7 @@
  *
  * @return int
  */
-function wpmji_get_template_id(): int {
+function gjmji_get_template_id(): int {
 	$template_id;
 
 	foreach ( get_active_languages() as $language ) {

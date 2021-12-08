@@ -12,7 +12,7 @@
  *
  * @return void
  */
-function wpmji_auto_include( string $directory_to_include ): void {
+function gjmji_auto_include( string $directory_to_include ): void {
 	foreach ( scandir( $directory_to_include ) as $filename ) {
 		$filepath      = str_replace( '\\', '/', $directory_to_include . '/' . $filename );
 		$filepath_this = str_replace( '\\', '/', __FILE__ );

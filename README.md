@@ -1,9 +1,9 @@
-# WP Mailjet Integration
+# Mailjet Integration
 A simple Mailjet integration for WordPress.
 
-WP Mailjet Integration is like any other Mailjet integration. It's aiming to be simple, lightweight, robust and customizable.
+Mailjet Integration is like any other Mailjet integration. It's aiming to be simple, lightweight, robust and customizable.
 
-If you have any questions, check out the [wiki](https://github.com/grandeljay/grandeljay-wp-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/grandeljay-wp-mailjet-integration/issues).
+If you have any questions, check out the [wiki](https://github.com/grandeljay/grandeljay-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/grandeljay-mailjet-integration/issues).
 
 
 ## Getting started
@@ -16,18 +16,18 @@ After cloning this repository you can get started after 2 easy steps.
 
 1. Add shortcode
 
-    Add `[wp_mailjet_integration]` anywhere to see the subscription form.
+    Add `[mailjet_integration]` anywhere to see the subscription form.
 
 ## Configuration
 
 ### Shortcodes
 So far the following shortcodes are available.
 
-* `[wp_mailjet_integration]`
+* `[mailjet_integration]`
 
   The subscription form
 
-* `[wp_mailjet_integration_response]`
+* `[mailjet_integration_response]`
 
   The response after clicking the confirmation link. Put this in your Success/Failure pages.
 
@@ -48,7 +48,7 @@ So far the following variables are available and can be used in your transaction
 
 ## Compatibility
 
-WP Mailjet Integration works with:
+Mailjet Integration works with:
 
 * [WPML](https://wpml.org/)
 * [Git Updater](https://github.com/afragen/git-updater)
@@ -66,4 +66,4 @@ composer install
 We are using the WordPress coding standard.
 
 ### Contributors
-For a full list of all contributers please see [Contributors](https://github.com/grandeljay/grandeljay-wp-mailjet-integration/graphs/contributors).
+For a full list of all contributers please see [Contributors](https://github.com/grandeljay/grandeljay-mailjet-integration/graphs/contributors).

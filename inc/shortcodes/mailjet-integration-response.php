@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Mailjet Integration shortcode (response)
+ * Mailjet Integration shortcode (response)
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
@@ -13,12 +13,12 @@
  *
  * @return string
  */
-function wpmji_shortcode_wp_mailjet_integration_response( $atts = array(), $content = '' ): string {
+function gjmji_shortcode_mailjet_integration_response( $atts = array(), $content = '' ): string {
 	$response = '';
 
 	// phpcs:disable WordPress.Security.NonceVerification.Recommended
-	if ( isset( $_GET['wpmji-response'] ) ) {
-		$response .= $_GET['wpmji-response'];
+	if ( isset( $_GET['gjmji-response'] ) ) {
+		$response .= $_GET['gjmji-response'];
 	}
 	if ( isset( $_GET['ErrorMessage'] ) ) {
 		$response .= '<strong>' . $_GET['StatusCode'] . '</strong> - ';
@@ -26,9 +26,9 @@ function wpmji_shortcode_wp_mailjet_integration_response( $atts = array(), $cont
 	}
 	// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
-	$content .= '<div class="wpmji-response">' . $response . '</div>';
+	$content .= '<div class="gjmji-response">' . $response . '</div>';
 
 	return $content;
 }
 
-add_shortcode( 'wp_mailjet_integration_response', 'wpmji_shortcode_wp_mailjet_integration_response' );
+add_shortcode( 'mailjet_integration_response', 'gjmji_shortcode_mailjet_integration_response' );

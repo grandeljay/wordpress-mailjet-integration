@@ -6,18 +6,18 @@
  */
 
 /** Mailjet */
-define( 'WPMJI_MAILJET_API_VERSION', 'wpmji-mailjet-api-version' );
-define( 'WPMJI_MAILJET_API_VERSION_SEND', 'wpmji-mailjet-api-version-send' );
-define( 'WPMJI_MAILJET_API_KEY', 'wpmji-mailjet-api-key' );
-define( 'WPMJI_MAILJET_API_SECRET', 'wpmji-mailjet-api-secret' );
+define( 'WPMJI_MAILJET_API_VERSION', 'gjmji-mailjet-api-version' );
+define( 'WPMJI_MAILJET_API_VERSION_SEND', 'gjmji-mailjet-api-version-send' );
+define( 'WPMJI_MAILJET_API_KEY', 'gjmji-mailjet-api-key' );
+define( 'WPMJI_MAILJET_API_SECRET', 'gjmji-mailjet-api-secret' );
 
-define( 'WPMJI_MAILJET_TEMPLATE_ID_CONFIRMATION', 'wpmji-mailjet-template-id-confirmation' );
-define( 'WPMJI_MAILJET_TEMPLATE_EMAIL_FROM', 'wpmji-mailjet-template-email-from' );
-define( 'WPMJI_MAILJET_TEMPLATE_EMAIL_NAME', 'wpmji-mailjet-template-email-name' );
+define( 'WPMJI_MAILJET_TEMPLATE_ID_CONFIRMATION', 'gjmji-mailjet-template-id-confirmation' );
+define( 'WPMJI_MAILJET_TEMPLATE_EMAIL_FROM', 'gjmji-mailjet-template-email-from' );
+define( 'WPMJI_MAILJET_TEMPLATE_EMAIL_NAME', 'gjmji-mailjet-template-email-name' );
 
 /** WordPress */
-define( 'WPMJI_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS', 'wpmji-wordpress-page-id-confirmation-success' );
-define( 'WPMJI_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE', 'wpmji-wordpress-page-id-confirmation-failure' );
+define( 'WPMJI_WORDPRESS_PAGE_ID_CONFIRMATION_SUCCESS', 'gjmji-wordpress-page-id-confirmation-success' );
+define( 'WPMJI_WORDPRESS_PAGE_ID_CONFIRMATION_FAILURE', 'gjmji-wordpress-page-id-confirmation-failure' );
 
 /** WPML */
 define( 'WPMJI_LANGUAGE_DEFAULT', 'en' );

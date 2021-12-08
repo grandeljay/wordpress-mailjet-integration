@@ -10,7 +10,7 @@
  *
  * @return void
  */
-function wpmji_confirm_email(): void {
+function gjmji_confirm_email(): void {
 	/**
 	 * Verify fields
 	 */
@@ -34,8 +34,8 @@ function wpmji_confirm_email(): void {
 	if ( false === wp_verify_nonce( $_GET['gjmp4wp-nonce'], 'newsletter-subscribe' ) ) {
 		wp_safe_redirect(
 			add_query_arg(
-				rawurlencode( 'wpmji-response' ),
-				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-wp-mailjet-integration' ) ),
+				rawurlencode( 'gjmji-response' ),
+				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-integration' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
 		);
@@ -51,8 +51,8 @@ function wpmji_confirm_email(): void {
 	if ( $checksum !== $_GET['gjmp4wp-checksum'] ) {
 		wp_safe_redirect(
 			add_query_arg(
-				rawurlencode( 'wpmji-response' ),
-				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-wp-mailjet-integration' ) ),
+				rawurlencode( 'gjmji-response' ),
+				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-integration' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
 		);
@@ -136,4 +136,4 @@ function wpmji_confirm_email(): void {
 
 }
 
-add_action( 'wp', 'wpmji_confirm_email' );
+add_action( 'wp', 'gjmji_confirm_email' );
