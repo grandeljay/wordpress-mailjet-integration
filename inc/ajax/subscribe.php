@@ -119,7 +119,7 @@ function gjmj4wp_ajax_subscribe(): void {
 		 */
 		wp_send_json_success(
 			array(
-				'message' => esc_html__( 'Please confirm your email address.', 'grandeljay-mailjet-for-wordpress' ),
+				'message' => esc_html__( 'Please confirm your email address.', 'grandeljay-wp-mailjet-integration' ),
 			),
 		);
 	} else {

@@ -35,7 +35,7 @@ function gjmj4wp_confirm_email(): void {
 		wp_safe_redirect(
 			add_query_arg(
 				rawurlencode( 'gjmj4wp-response' ),
-				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-for-wordpress' ) ),
+				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-wp-mailjet-integration' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
 		);
@@ -52,7 +52,7 @@ function gjmj4wp_confirm_email(): void {
 		wp_safe_redirect(
 			add_query_arg(
 				rawurlencode( 'gjmj4wp-response' ),
-				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-mailjet-for-wordpress' ) ),
+				rawurlencode( __( 'The link appears to no longer be valid.', 'grandeljay-wp-mailjet-integration' ) ),
 				get_page_link( get_page_id_subscribe_failure() ),
 			)
 		);

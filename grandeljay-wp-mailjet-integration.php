@@ -1,24 +1,24 @@
 <?php
 /**
- * Mailjet for WordPress
+ * WP Mailjet Integration
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  *
  * @wordpress-plugin
- * Plugin Name:       Mailjet for WordPress
+ * Plugin Name:       WP Mailjet Integration
  * Description:       A simple integration for Mailjet into WordPress.
  * Version:           0.2.2
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Jay Trees
  * Author URI:        https://github.com/grandeljay
- * Text Domain:       grandeljay-mailjet-for-wordpress
+ * Text Domain:       grandeljay-wp-mailjet-integration
  * License:           APGL3
- * License URI:       https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/blob/stable/LICENSE
+ * License URI:       https://github.com/grandeljay/grandeljay-wp-mailjet-integration/blob/stable/LICENSE
  * Domain Path:       /languages
  *
  * @git-updater
- * GitHub Plugin URI: grandeljay/grandeljay-mailjet-for-wordpress
+ * GitHub Plugin URI: grandeljay/grandeljay-wp-mailjet-integration
  * Primary Branch: stable
  */
 

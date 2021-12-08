@@ -10,7 +10,7 @@
  */
 function gjmj4wp_load_textdomain() {
 	load_plugin_textdomain(
-		'grandeljay-mailjet-for-wordpress',
+		'grandeljay-wp-mailjet-integration',
 		false,
 		dirname( plugin_basename( GJMF4WP_PLUGIN ) ) . '/languages'
 	);

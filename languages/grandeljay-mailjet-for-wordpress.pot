@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: "
-"Mailjet for WordPress "
+"WP Mailjet Integration "
 "v0.2.2\n"
 "POT-Creation-Date: "
 "2021-11-26 10:11+0100\n"

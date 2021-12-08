@@ -39,7 +39,7 @@ function gjmj4wp_wp_enqueue_scripts(): void {
 			'nonce'        => wp_create_nonce( 'GJMJ4WP-AJAX' ),
 			'language'     => GJMJ4WP_LANGUAGE_DEFAULT,
 
-			'text_loading' => __( 'Loading. Please wait...', 'grandeljay-mailjet-for-wordpress' ),
+			'text_loading' => __( 'Loading. Please wait...', 'grandeljay-wp-mailjet-integration' ),
 		)
 	);
 }

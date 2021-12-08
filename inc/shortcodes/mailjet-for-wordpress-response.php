@@ -1,6 +1,6 @@
 <?php
 /**
- * Mailjet for WordPress shortcode (response)
+ * WP Mailjet Integration shortcode (response)
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
