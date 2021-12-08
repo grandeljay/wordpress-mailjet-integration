@@ -2,7 +2,7 @@
 Tags: mailjet, api
 Requires at least: 5.8.2
 Tested up to: 5.8.2
-Stable tag: 0.2.1
+Stable tag: 0.2.2
 Requires PHP: 7.4
 License: APGL3
 License URI: https://github.com/grandeljay/grandeljay-mailjet-for-wordpress/blob/stable/LICENSE
