@@ -1,4 +1,4 @@
-=== Mailjet Integration ===
+=== Integration for Mailjet ===
 Tags: mailjet, api
 Requires at least: 5.8.2
 Tested up to: 5.8.2
@@ -13,11 +13,11 @@ A simple integration for Mailjet into WordPress.
 
 A simple Mailjet integration for WordPress.
 
-Mailjet Integration is like any other Mailjet integration. It's aiming to be simple, lightweight, robust and customizable.
+Integration for Mailjet is like any other Mailjet integration. It's aiming to be simple, lightweight, robust and customizable.
 
 If you have any questions, check out the [wiki](https://github.com/grandeljay/grandeljay-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/grandeljay-mailjet-integration/issues).
 
-Mailjet Integration works with:
+Integration for Mailjet works with:
 
 * [WPML](https://wpml.org/)
 * [Git Updater](https://github.com/afragen/git-updater)

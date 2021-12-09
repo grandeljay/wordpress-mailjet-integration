@@ -1,6 +1,6 @@
 <?php
 /**
- * Mailjet Integration shortcode (response)
+ * Integration for Mailjet shortcode (response)
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */

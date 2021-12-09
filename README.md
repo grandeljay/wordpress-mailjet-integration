@@ -1,7 +1,7 @@
-# Mailjet Integration
+# Integration for Mailjet
 A simple Mailjet integration for WordPress.
 
-Mailjet Integration is like any other Mailjet integration. It's aiming to be simple, lightweight, robust and customizable.
+Integration for Mailjet is like any other Mailjet integration. It's aiming to be simple, lightweight, robust and customizable.
 
 If you have any questions, check out the [wiki](https://github.com/grandeljay/grandeljay-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/grandeljay-mailjet-integration/issues).
 
@@ -48,7 +48,7 @@ So far the following variables are available and can be used in your transaction
 
 ## Compatibility
 
-Mailjet Integration works with:
+Integration for Mailjet works with:
 
 * [WPML](https://wpml.org/)
 * [Git Updater](https://github.com/afragen/git-updater)

@@ -110,6 +110,9 @@ function gjmji_ajax_subscribe(): void {
 				$email,
 				PHP_EOL . PHP_EOL . $th->getMessage()
 			),
+			array(
+				'Content-Type' => 'text/html; charset=UTF-8',
+			)
 		);
 
 		wp_send_json_error(

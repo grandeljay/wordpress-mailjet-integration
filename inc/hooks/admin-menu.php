@@ -30,8 +30,8 @@ function gjmji_options() {
 	/**
 	 * Menu
 	 */
-	$page_title = 'Mailjet Integration';
-	$menu_title = 'Mailjet Integration';
+	$page_title = 'Integration for Mailjet';
+	$menu_title = 'Integration for Mailjet';
 	$capability = 'manage_options';
 	$menu_slug  = 'gjmji-options';
 	$function   = 'gjmji_options_html_mailjet_api';

@@ -1,11 +1,11 @@
 <?php
 /**
- * Mailjet Integration
+ * Integration for Mailjet
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  *
  * @wordpress-plugin
- * Plugin Name:       Mailjet Integration
+ * Plugin Name:       Integration for Mailjet
  * Description:       A simple integration for Mailjet into WordPress.
  * Version:           0.2.2
  * Requires at least: 5.8

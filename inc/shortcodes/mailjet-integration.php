@@ -1,12 +1,12 @@
 <?php
 /**
- * Mailjet Integration shortcode (subscription form)
+ * Integration for Mailjet shortcode (subscription form)
  *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
 /**
- * Mailjet Integration
+ * Integration for Mailjet
  *
  * @param array  $atts    Any shortcode attributes.
  * @param string $content The shortcode content.

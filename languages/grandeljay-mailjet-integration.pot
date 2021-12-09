@@ -8,7 +8,7 @@ msgstr ""
 "Mailjet Integration "
 "v0.2.2\n"
 "POT-Creation-Date: "
-"2021-11-26 10:11+0100\n"
+"2021-12-09 09:34+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -51,10 +51,121 @@ msgstr ""
 "X-Poedit-"
 "SearchPath-0: .\n"
 
+#: ajax/subscribe.php:106
+msgid ""
+"Newsletter subscription "
+"failed"
+msgstr ""
+
 #: ajax/subscribe.php:109
+#, php-format
+msgid ""
+"The user %1$s tried to "
+"subscribe to your "
+"newsletter but couldn't "
+"due to an error. %2$s"
+msgstr ""
+
+#: ajax/subscribe.php:120
+msgid ""
+"It seems like something "
+"went wrong. The "
+"administrator has been "
+"notified about the error."
+msgstr ""
+
+#: ajax/subscribe.php:131
 msgid ""
 "Please confirm your "
 "email address."
+msgstr ""
+
+#: ajax/subscribe.php:140
+msgid ""
+"It seems like something "
+"went wrong. The "
+"administrator could not "
+"be notified about the "
+"error."
+msgstr ""
+
+#: hooks/admin-init.php:23
+msgid "Mailjet API"
+msgstr ""
+
+#: hooks/admin-init.php:31
+msgid "Mailjet Template"
+msgstr ""
+
+#: hooks/admin-init.php:39
+msgid "WordPress"
+msgstr ""
+
+#: hooks/admin-init.php:49
+msgid "WPML"
+msgstr ""
+
+#: hooks/admin-init.php:76
+msgid "Version"
+msgstr ""
+
+#: hooks/admin-init.php:100
+msgid "Version (Send)"
+msgstr ""
+
+#: hooks/admin-init.php:124
+msgid "Key"
+msgstr ""
+
+#: hooks/admin-init.php:148
+msgid "Secret"
+msgstr ""
+
+#: hooks/admin-init.php:176
+msgid "Email from"
+msgstr ""
+
+#: hooks/admin-init.php:200
+msgid "Email name"
+msgstr ""
+
+#: hooks/admin-init.php:228
+msgid ""
+"Page ID Confirmation "
+"(Success)"
+msgstr ""
+
+#: hooks/admin-init.php:252
+msgid ""
+"Page ID Confirmation "
+"(Failure)"
+msgstr ""
+
+#: hooks/admin-init.php:286
+#, php-format
+msgid ""
+"Confirmation Template ID "
+"(%s)"
+msgstr ""
+
+#: hooks/admin-menu.php:69
+msgid ""
+"Save Mailjet API Settings"
+msgstr ""
+
+#: hooks/admin-menu.php:77
+msgid ""
+"Save Mailjet Template "
+"Settings"
+msgstr ""
+
+#: hooks/admin-menu.php:85
+msgid ""
+"Save WordPress Settings"
+msgstr ""
+
+#: hooks/admin-menu.php:94
+msgid "Save WPML Settings"
 msgstr ""
 
 #: hooks/wp-enqueue-script.php:42
@@ -69,10 +180,10 @@ msgid ""
 "longer be valid."
 msgstr ""
 
-#: shortcodes/mailjet-for-wordpress.php:13
+#: shortcodes/mailjet-integration.php:20
 msgid "Email address"
 msgstr ""
 
-#: shortcodes/mailjet-for-wordpress.php:14
+#: shortcodes/mailjet-integration.php:21
 msgid "Subscribe"
 msgstr ""
