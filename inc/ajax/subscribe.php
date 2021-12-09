@@ -92,13 +92,22 @@ function gjmji_ajax_subscribe(): void {
 			break;
 	}
 
-	$email_confirmation = $mailjet->post(
-		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-		\Mailjet\Resources::$Email,
-		array(
-			'body' => $email_confirmation_body,
-		),
-	);
+	try {
+		$email_confirmation = @$mailjet->post(
+			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			\Mailjet\Resources::$Email,
+			array(
+				'body' => $email_confirmation_body,
+			),
+		);
+	} catch ( \Throwable $th ) {
+		wp_mail(
+			get_bloginfo( 'admin_email' ),
+			'Newsletter subscription failed',
+			'The user ' . $email . ' tried to subscribe to your newsletter but couldn\'t due to an error.' . PHP_EOL . PHP_EOL .
+			$th->getMessage()
+		);
+	}
 
 	if ( $email_confirmation->success() ) {
 		/**
@@ -113,12 +122,6 @@ function gjmji_ajax_subscribe(): void {
 		/**
 		 * Sending a confirmation email has failed
 		 */
-		wp_mail(
-			get_bloginfo( 'admin_email' ),
-			'Newsletter subscription failed',
-			'The user ' . $email . ' tried to subscribe to your newsletter but couldn\'t due to an error.'
-		);
-
 		wp_send_json_error(
 			$email_confirmation->getData()
 		);
