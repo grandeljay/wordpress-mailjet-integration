@@ -100,19 +100,6 @@ function gjmji_ajax_subscribe(): void {
 		),
 	);
 
-	/**
-	 * Fallback to Send API v3 if v3.1 fails
-	 *
-	 * Sometimes v3.1 just returns an empty response, we'll fallback to v3
-	 * here and try again.
-	 */
-	if ( empty( $email_confirmation->getData() ) && 'v3' !== get_option( WPMJI_MAILJET_API_VERSION_SEND ) ) {
-		update_option( WPMJI_MAILJET_API_VERSION_SEND, 'v3' );
-
-		gjmji_ajax_subscribe();
-		wp_die();
-	}
-
 	if ( $email_confirmation->success() ) {
 		/**
 		 * Sending a confirmation email has succeeded
@@ -126,6 +113,12 @@ function gjmji_ajax_subscribe(): void {
 		/**
 		 * Sending a confirmation email has failed
 		 */
+		wp_mail(
+			get_bloginfo( 'admin_email' ),
+			'Newsletter subscription failed',
+			'The user ' . $email . ' tried to subscribe to your newsletter but couldn\'t due to an error.'
+		);
+
 		wp_send_json_error(
 			$email_confirmation->getData()
 		);
