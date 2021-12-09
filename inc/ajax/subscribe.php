@@ -93,7 +93,7 @@ function gjmji_ajax_subscribe(): void {
 	}
 
 	try {
-		$email_confirmation = @$mailjet->post(
+		$email_confirmation = $mailjet->post(
 			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			\Mailjet\Resources::$Email,
 			array(
@@ -103,9 +103,13 @@ function gjmji_ajax_subscribe(): void {
 	} catch ( \Throwable $th ) {
 		wp_mail(
 			get_bloginfo( 'admin_email' ),
-			'Newsletter subscription failed',
-			'The user ' . $email . ' tried to subscribe to your newsletter but couldn\'t due to an error.' . PHP_EOL . PHP_EOL .
-			$th->getMessage()
+			esc_html__( 'Newsletter subscription failed', 'grandeljay-mailjet-integration' ),
+			sprintf(
+				/* translators: 1: Email address 2: The error */
+				esc_html__( 'The user %1$s tried to subscribe to your newsletter but couldn\'t due to an error. %2$s', 'grandeljay-mailjet-integration' ),
+				$email,
+				PHP_EOL . PHP_EOL . $th->getMessage()
+			),
 		);
 	}
 
