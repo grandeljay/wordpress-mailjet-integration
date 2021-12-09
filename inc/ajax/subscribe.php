@@ -106,7 +106,7 @@ function gjmji_ajax_subscribe(): void {
 	 * Sometimes v3.1 just returns an empty response, we'll fallback to v3
 	 * here and try again.
 	 */
-	if ( empty( $email_confirmation->getData() ) ) {
+	if ( empty( $email_confirmation->getData() ) && 'v3' !== get_option( WPMJI_MAILJET_API_VERSION_SEND ) ) {
 		update_option( WPMJI_MAILJET_API_VERSION_SEND, 'v3' );
 
 		gjmji_ajax_subscribe();
