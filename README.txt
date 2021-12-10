@@ -11,7 +11,7 @@ License URI: https://github.com/grandeljay/grandeljay-mailjet-integration/blob/s
 A simple integration for Mailjet into WordPress.
 
 == Description ==
-A simple Mailjet integration for WordPress.
+A simple integration for Mailjet into WordPress.
 
 Integration for Mailjet is like any other Mailjet integration. It\'s aiming to be simple, lightweight, robust and customizable.
 
