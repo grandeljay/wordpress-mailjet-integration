@@ -117,7 +117,7 @@ function gjmji_confirm_email(): void {
 					esc_html__( 'The below listed contact properties could not be added for %1$s. %2$s', 'grandeljay-mailjet-integration' ),
 					sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
 					PHP_EOL . PHP_EOL .
-					json_encode( WPMJI_CONTACT_PROPERTIES )
+					wp_json_encode( WPMJI_CONTACT_PROPERTIES )
 				),
 				array(
 					'Content-Type' => 'text/html; charset=UTF-8',
