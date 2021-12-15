@@ -107,6 +107,23 @@ function gjmji_confirm_email(): void {
 				'body' => $properties_update_body,
 			)
 		);
+
+		if ( ! $properties_update->success() ) {
+			wp_mail(
+				get_bloginfo( 'admin_email' ),
+				esc_html__( 'Unable to add contact properties', 'grandeljay-mailjet-integration' ),
+				sprintf(
+					/* translators: 1: Email address 2: The error */
+					esc_html__( 'The below listed contact properties could not be added for %1$s. %2$s', 'grandeljay-mailjet-integration' ),
+					sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
+					PHP_EOL . PHP_EOL .
+					json_encode( WPMJI_CONTACT_PROPERTIES )
+				),
+				array(
+					'Content-Type' => 'text/html; charset=UTF-8',
+				)
+			);
+		}
 	}
 
 	/**
