@@ -21,6 +21,10 @@ function get_page_id_subscribe_success(): int {
 			true,
 			WPMJI_LANGUAGE_DEFAULT,
 		);
+
+		if ( null === $id ) {
+			$id = 0;
+		}
 	}
 
 	return $id;
@@ -42,6 +46,10 @@ function get_page_id_subscribe_failure(): int {
 			true,
 			WPMJI_LANGUAGE_DEFAULT,
 		);
+
+		if ( null === $id ) {
+			$id = 0;
+		}
 	}
 
 	return $id;
