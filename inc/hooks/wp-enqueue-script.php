@@ -37,7 +37,7 @@ function gjmji_wp_enqueue_scripts(): void {
 		array(
 			'ajax_url'     => admin_url( 'admin-ajax.php' ),
 			'nonce'        => wp_create_nonce( 'WPMJI-AJAX' ),
-			'language'     => WPMJI_LANGUAGE_DEFAULT,
+			'language'     => WPMJI_LANGUAGE_CURRENT,
 
 			'text_loading' => __( 'Loading. Please wait...', 'grandeljay-mailjet-integration' ),
 		)
