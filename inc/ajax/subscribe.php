@@ -101,23 +101,9 @@ function gjmji_ajax_subscribe(): void {
 			),
 		);
 	} catch ( \Throwable $th ) {
-		wp_mail(
-			get_bloginfo( 'admin_email' ),
-			esc_html__( 'Newsletter subscription failed', 'grandeljay-mailjet-integration' ),
-			sprintf(
-				/* translators: 1: Email address 2: The error */
-				esc_html__( 'The user %1$s tried to subscribe to your newsletter but couldn\'t due to an error. %2$s', 'grandeljay-mailjet-integration' ),
-				$email,
-				PHP_EOL . PHP_EOL . $th->getMessage()
-			),
-			array(
-				'Content-Type' => 'text/html; charset=UTF-8',
-			)
-		);
-
 		wp_send_json_error(
 			array(
-				'message'  => esc_html__( 'It seems like something went wrong. The administrator has been notified about the error.', 'grandeljay-mailjet-integration' ),
+				'message'  => esc_html__( 'It seems like something went wrong.', 'grandeljay-mailjet-integration' ),
 				'response' => $th->getMessage(),
 			),
 		);
@@ -138,7 +124,7 @@ function gjmji_ajax_subscribe(): void {
 		 */
 		wp_send_json_error(
 			array(
-				'message'  => esc_html__( 'It seems like something went wrong. The administrator could not be notified about the error.', 'grandeljay-mailjet-integration' ),
+				'message'  => esc_html__( 'It seems like something went wrong.', 'grandeljay-mailjet-integration' ),
 				'response' => $email_confirmation->getData(),
 			),
 		);
