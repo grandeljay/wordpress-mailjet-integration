@@ -12,7 +12,7 @@ function gjmji_load_textdomain() {
 	load_plugin_textdomain(
 		'grandeljay-mailjet-integration',
 		false,
-		dirname( plugin_basename( GJMF4WP_PLUGIN ) ) . '/languages'
+		dirname( plugin_basename( WPMJI_PLUGIN ) ) . '/languages'
 	);
 }
 

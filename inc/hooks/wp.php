@@ -110,6 +110,21 @@ function gjmji_confirm_email(): void {
 	}
 
 	/**
+	 * Add Consent
+	 */
+	global $wpdb;
+
+	$table_consent = $wpdb->prefix . 'gjmji_consent';
+
+	$wpdb->insert(
+		$table_consent,
+		array(
+			'email'    => sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
+			'language' => WPMJI_LANGUAGE_CURRENT,
+		),
+	);
+
+	/**
 	 * Redirect
 	 */
 	$id = get_page_id_subscribe_failure();

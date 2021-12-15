@@ -2,6 +2,8 @@
 /**
  * Config
  *
+ * These are the slugs for the options in WordPress.
+ *
  * @author Jay Trees <github.jay@grandel.anonaddy.me>
  */
 
