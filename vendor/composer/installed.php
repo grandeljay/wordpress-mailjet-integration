@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '51b3ed0eb32286080d1eaf1291e339255c434bac',
+        'reference' => 'a13418c66c713a08e3c370853406e01d801ea47d',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '51b3ed0eb32286080d1eaf1291e339255c434bac',
+            'reference' => 'a13418c66c713a08e3c370853406e01d801ea47d',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
@@ -155,12 +155,12 @@
             'dev_requirement' => false,
         ),
         'squizlabs/php_codesniffer' => array(
-            'pretty_version' => '3.6.1',
-            'version' => '3.6.1.0',
+            'pretty_version' => '3.6.2',
+            'version' => '3.6.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(),
-            'reference' => 'f268ca40d54617c6e06757f83f699775c9b3ff2e',
+            'reference' => '5e4e71592f69da17871dba6e80dd51bce74a351a',
             'dev_requirement' => true,
         ),
         'symfony/deprecation-contracts' => array(
