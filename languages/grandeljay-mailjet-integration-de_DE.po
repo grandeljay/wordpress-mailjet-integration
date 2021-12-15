@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mailjet Integration v0.2.2\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2021-12-09 09:35+0100\n"
+"POT-Creation-Date: 2021-12-15 14:19+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jay Trees <github.jay@grandel.anonaddy.me>\n"
 "Language-Team: Jay Trees <github.jay@grandel.anonaddy.me>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,"
 "_nc:4c,1,2\n"
 "X-Poedit-Basepath: ../inc\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: ajax/subscribe.php:106
@@ -132,10 +132,26 @@ msgstr "Wird geladen. Bitte warten..."
 msgid "The link appears to no longer be valid."
 msgstr "Der Link scheint nicht mehr gültig zu sein."
 
+#: hooks/wp.php:114
+msgid "Unable to add contact properties"
+msgstr ""
+
+#: hooks/wp.php:117
+#, php-format
+msgid "The below listed contact properties could not be added for %1$s. %2$s"
+msgstr ""
+
 #: shortcodes/mailjet-integration.php:20
 msgid "Email address"
 msgstr "E-Mail Adresse"
 
 #: shortcodes/mailjet-integration.php:21
+msgid ""
+"I agree to the processing of my personal data for advertising purposes and "
+"to receive e-mail for advertising purposes. I can revoke the given consent "
+"at any time with effect for the future in any appropriate form."
+msgstr ""
+
+#: shortcodes/mailjet-integration.php:22
 msgid "Subscribe"
 msgstr "Abonnieren"
