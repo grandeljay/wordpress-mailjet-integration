@@ -3,7 +3,7 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mailjet Integration v0.2.2\n"
+"Project-Id-Version: Mailjet Integration v0.3.2\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
 "POT-Creation-Date: 2021-12-15 14:19+0100\n"
 "PO-Revision-Date: \n"
