@@ -117,7 +117,8 @@ function gjmji_ajax_subscribe(): void {
 
 		wp_send_json_error(
 			array(
-				'message' => esc_html__( 'It seems like something went wrong. The administrator has been notified about the error.', 'grandeljay-mailjet-integration' ),
+				'message'  => esc_html__( 'It seems like something went wrong. The administrator has been notified about the error.', 'grandeljay-mailjet-integration' ),
+				'response' => $th->getMessage(),
 			),
 		);
 	}
@@ -137,9 +138,9 @@ function gjmji_ajax_subscribe(): void {
 		 */
 		wp_send_json_error(
 			array(
-				'message' => esc_html__( 'It seems like something went wrong. The administrator could not be notified about the error.', 'grandeljay-mailjet-integration' ),
+				'message'  => esc_html__( 'It seems like something went wrong. The administrator could not be notified about the error.', 'grandeljay-mailjet-integration' ),
+				'response' => $email_confirmation->getData(),
 			),
-			$email_confirmation->getData()
 		);
 	}
 
