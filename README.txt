@@ -8,10 +8,10 @@ Stable tag: 0.3.2
 License: APGL3
 License URI: https://github.com/grandeljay/grandeljay-mailjet-integration/blob/stable/LICENSE
 
-A simple integration for Mailjet into WordPress.
+A simple free and open source integration for Mailjet into WordPress.
 
 == Description ==
-A simple integration for Mailjet into WordPress.
+A simple free and open source integration for Mailjet into WordPress.
 
 Integration for Mailjet is like any other Mailjet integration. It\'s aiming to be simple, lightweight, robust and customizable.
 
