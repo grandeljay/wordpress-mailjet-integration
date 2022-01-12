@@ -88,58 +88,61 @@ function gjmji_confirm_email(): void {
 		)
 	);
 
-	/**
-	 * Contact Properties
-	 *
-	 * @link https://dev.mailjet.com/email/reference/contacts/contact-properties/
-	 */
-	$properties_update_body = array(
-		'Data' => array( WPMJI_CONTACT_PROPERTIES ),
-	);
-
-	if ( defined( 'WPMJI_CONTACT_PROPERTIES' ) && count( WPMJI_CONTACT_PROPERTIES ) > 0 ) {
-		$properties_update = $mailjet->put(
-			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-			\Mailjet\Resources::$Contactdata,
-			array(
-				// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-				'id'   => $contact_add->getBody()['Data'][0]['ID'],
-				'body' => $properties_update_body,
-			)
+	/** Success */
+	if ( $contact_add->success() ) {
+		/**
+		 * Contact Properties
+		 *
+		 * @link https://dev.mailjet.com/email/reference/contacts/contact-properties/
+		 */
+		$properties_update_body = array(
+			'Data' => array( WPMJI_CONTACT_PROPERTIES ),
 		);
 
-		if ( ! $properties_update->success() ) {
-			wp_mail(
-				get_bloginfo( 'admin_email' ),
-				esc_html__( 'Unable to add contact properties', 'grandeljay-mailjet-integration' ),
-				sprintf(
-					/* translators: 1: Email address 2: The error */
-					esc_html__( 'The below listed contact properties could not be added for %1$s. %2$s', 'grandeljay-mailjet-integration' ),
-					sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
-					PHP_EOL . PHP_EOL .
-					wp_json_encode( WPMJI_CONTACT_PROPERTIES )
-				),
+		if ( defined( 'WPMJI_CONTACT_PROPERTIES' ) && count( WPMJI_CONTACT_PROPERTIES ) > 0 ) {
+			$properties_update = $mailjet->put(
+				// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				\Mailjet\Resources::$Contactdata,
 				array(
-					'Content-Type' => 'text/html; charset=UTF-8',
+					// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+					'id'   => $contact_add->getBody()['Data'][0]['ID'],
+					'body' => $properties_update_body,
 				)
 			);
+
+			if ( ! $properties_update->success() ) {
+				wp_mail(
+					get_bloginfo( 'admin_email' ),
+					esc_html__( 'Unable to add contact properties', 'grandeljay-mailjet-integration' ),
+					sprintf(
+						/* translators: 1: Email address 2: The error */
+						esc_html__( 'The below listed contact properties could not be added for %1$s. %2$s', 'grandeljay-mailjet-integration' ),
+						sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
+						PHP_EOL . PHP_EOL .
+						wp_json_encode( WPMJI_CONTACT_PROPERTIES )
+					),
+					array(
+						'Content-Type' => 'text/html; charset=UTF-8',
+					)
+				);
+			}
 		}
+
+		/**
+		 * Add Consent
+		 */
+		global $wpdb;
+
+		$table_consent = $wpdb->prefix . 'gjmji_consent';
+
+		$wpdb->insert(
+			$table_consent,
+			array(
+				'email'    => sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
+				'language' => WPMJI_LANGUAGE_CURRENT,
+			),
+		);
 	}
-
-	/**
-	 * Add Consent
-	 */
-	global $wpdb;
-
-	$table_consent = $wpdb->prefix . 'gjmji_consent';
-
-	$wpdb->insert(
-		$table_consent,
-		array(
-			'email'    => sanitize_email( wp_unslash( $_GET['gjmp4wp-email'] ) ),
-			'language' => WPMJI_LANGUAGE_CURRENT,
-		),
-	);
 
 	/**
 	 * Redirect
