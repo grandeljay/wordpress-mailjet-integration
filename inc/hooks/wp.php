@@ -135,6 +135,12 @@ function gjmji_confirm_email(): void {
 
 		$table_consent = $wpdb->prefix . 'gjmji_consent';
 
+		/**
+		 * PHPCS: This is a false positive.
+		 *
+		 * @see https://wordpress.org/support/topic/usage-of-a-direct-database-call-is-discouraged/
+		 */
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 		$wpdb->insert(
 			$table_consent,
 			array(
