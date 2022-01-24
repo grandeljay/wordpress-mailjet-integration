@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a13418c66c713a08e3c370853406e01d801ea47d',
+        'reference' => '42a534a8668a368113d14d4bba96f7f0bf3e42ad',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a13418c66c713a08e3c370853406e01d801ea47d',
+            'reference' => '42a534a8668a368113d14d4bba96f7f0bf3e42ad',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
@@ -92,12 +92,12 @@
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(
-            'pretty_version' => '1.4.4',
-            'version' => '1.4.4.0',
+            'pretty_version' => '1.5.0',
+            'version' => '1.5.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../mockery/mockery',
             'aliases' => array(),
-            'reference' => 'e01123a0e847d52d186c5eb4b9bf58b0c6d00346',
+            'reference' => 'c10a5f6e06fc2470ab1822fa13fa2a7380f8fbac',
             'dev_requirement' => false,
         ),
         'psr/http-client' => array(
