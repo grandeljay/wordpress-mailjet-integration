@@ -2,7 +2,7 @@
 Contributors: grandeljay
 Tags: mailjet, api
 Requires at least: 5.8.2
-Tested up to: 5.8.2
+Tested up to: 5.9
 Requires PHP: 7.4
 Stable tag: 0.3.2
 License: APGL3
