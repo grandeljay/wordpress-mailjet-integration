@@ -21,3 +21,6 @@ Integration for Mailjet works with:
 
 * [WPML](https://wpml.org/)
 * [Git Updater](https://github.com/afragen/git-updater)
+
+== Changelog ==
+* [v0.3.3](https://github.com/grandeljay/grandeljay-mailjet-integration/commits/v0.3.3)
