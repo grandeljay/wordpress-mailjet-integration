@@ -142,3 +142,14 @@ function gjmji_register_uninstall_hook() {
 }
 
 register_uninstall_hook( WPMJI_PLUGIN, 'gjmji_register_uninstall_hook' );
+
+/**
+ * Load textdomain
+ */
+add_action( 'init', function() {
+	load_plugin_textdomain(
+		'grandeljay-mailjet-integration',
+		false,
+		dirname( plugin_basename( __FILE__ ) ) . '/languages'
+	);
+} );
