@@ -19,7 +19,7 @@
  *
  * @git-updater
  * GitHub Plugin URI: grandeljay/wordpress-mailjet-integration
- * Primary Branch: stable
+ * Primary Branch:    stable
  */
 
 define( 'WPMJI_PLUGIN', __FILE__ );
