@@ -14,11 +14,11 @@
  * Author URI:        https://github.com/grandeljay
  * Text Domain:       grandeljay-mailjet-integration
  * License:           APGL3
- * License URI:       https://github.com/grandeljay/grandeljay-mailjet-integration/blob/stable/LICENSE
+ * License URI:       https://github.com/grandeljay/wordpress-mailjet-integration/blob/stable/LICENSE
  * Domain Path:       /languages
  *
  * @git-updater
- * GitHub Plugin URI: grandeljay/grandeljay-mailjet-integration
+ * GitHub Plugin URI: grandeljay/wordpress-mailjet-integration
  * Primary Branch: stable
  */
 
