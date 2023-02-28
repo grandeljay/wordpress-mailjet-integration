@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<ruleset name="WordPress-Custom">
-    <rule ref="WordPress">
-        <exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
-    </rule>
-</ruleset>
