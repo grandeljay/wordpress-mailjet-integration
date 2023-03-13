@@ -4,9 +4,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mailjet Integration v0.3.3\n"
+"Project-Id-Version: Mailjet Integration\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2023-02-28 09:25+0100\n"
+"POT-Creation-Date: 2023-03-13 13:58+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your Name <you@example.com>\n"
 "Language-Team: Jay Trees <github.jay@grandel.anonaddy.me>\n"

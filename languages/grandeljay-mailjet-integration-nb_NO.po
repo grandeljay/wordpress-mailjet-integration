@@ -5,37 +5,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mailjet Integration\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2023-03-13 14:00+0100\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2023-03-13 13:59+0100\n"
+"PO-Revision-Date: 2023-03-13 13:59+0100\n"
 "Last-Translator: Jay Trees <github.jay@grandel.anonaddy.me>\n"
-"Language-Team: Jay Trees <github.jay@grandel.anonaddy.me>\n"
-"Language: fr_FR\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/wordpress-mailjet-integration/mailjet-integration/nb_NO/>\n"
+"Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ../inc\n"
-"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: ajax/subscribe.php:117
 msgid "Please confirm your email address."
-msgstr "Veuillez confirmer votre adresse électronique."
+msgstr "Bekreft din e-postadresse."
 
 #: ajax/subscribe.php:126
 msgid "Sending the email confirmation has not succeeded."
-msgstr "L'envoi de l'email de confirmation n'a pas réussi."
+msgstr "Kunne ikke sende e-postbekreftelse."
 
 #: hooks/admin-init.php:23
 msgid "Mailjet API"
-msgstr "API de Mailjet"
+msgstr "Mailjet-API"
 
 #: hooks/admin-init.php:31
 msgid "Mailjet Template"
-msgstr "Modèle Mailjet"
+msgstr "Mailjet-mal"
 
 #: hooks/admin-init.php:39
 msgid "WordPress"
@@ -47,82 +47,84 @@ msgstr "WPML"
 
 #: hooks/admin-init.php:76
 msgid "Version"
-msgstr "Version"
+msgstr "Versjon"
 
 #: hooks/admin-init.php:100
+#, fuzzy
 msgid "Version (Send)"
-msgstr "Version (envoi)"
+msgstr "Versjon (send)"
 
 #: hooks/admin-init.php:124
 msgid "Key"
-msgstr "Clé"
+msgstr "Nøkkel"
 
 #: hooks/admin-init.php:148
 msgid "Secret"
-msgstr "Secret"
+msgstr "Hemmelighet"
 
 #: hooks/admin-init.php:176
 msgid "Email from"
-msgstr "Courriel de"
+msgstr "E-post fra"
 
 #: hooks/admin-init.php:200
 msgid "Email name"
-msgstr "Nom de courriel"
+msgstr "E-postnavn"
 
 #: hooks/admin-init.php:228
 msgid "Page ID Confirmation (Success)"
-msgstr "Confirmation de l'ID de la page (succès)"
+msgstr "Side-ID-bekreftelse (vellykket)"
 
 #: hooks/admin-init.php:252
 msgid "Page ID Confirmation (Failure)"
-msgstr "Confirmation de l'ID de la page (échec)"
+msgstr "Side-ID-bekreftelse (mislykket)"
 
 #: hooks/admin-init.php:286
 #, php-format
 msgid "Confirmation Template ID (%s)"
-msgstr "ID du modèle de confirmation (%s)"
+msgstr "Bekreftelsesmal-ID (%s)"
 
 #: hooks/admin-menu.php:69
 msgid "Save Mailjet API Settings"
-msgstr "Sauvegarder les paramètres de l'API Mailjet"
+msgstr "Lagre Mailjet-API-innstillinger"
 
 #: hooks/admin-menu.php:77
 msgid "Save Mailjet Template Settings"
-msgstr "Sauvegarder les paramètres du modèle Mailjet"
+msgstr "Lagre Mailjet-mal-innstillinger"
 
 #: hooks/admin-menu.php:85
 msgid "Save WordPress Settings"
-msgstr "Sauvegarder les paramètres de WordPress"
+msgstr "Lagre WordPress-innstillinger"
 
 #: hooks/admin-menu.php:94
 msgid "Save WPML Settings"
-msgstr "Sauvegarder les paramètres WPML"
+msgstr "Lagre WPML-innstillinger"
 
 #: hooks/wp-enqueue-script.php:42
 msgid "Loading. Please wait..."
-msgstr "Chargement. Veuillez patienter..."
+msgstr "Laster. Vent …"
 
 #: hooks/wp.php:38 hooks/wp.php:55
 msgid "The link appears to no longer be valid."
-msgstr "Le lien semble ne plus être valide."
+msgstr "Lenken er ikke lenger gyldig."
 
 #: hooks/wp.php:116
 msgid "Unable to add contact properties"
-msgstr "Impossible d'ajouter les propriétés d'un contact"
+msgstr "Kunne ikke legge til kontaktegenskaper"
 
 #: hooks/wp.php:119
 #, php-format
 msgid "The below listed contact properties could not be added for %1$s. %2$s"
-msgstr "Les propriétés de contact énumérées ci-dessous n'ont pas pu être ajoutées pour %1$s. %2$s"
+msgstr "Kontaktegenskapene nedenfor kunne ikke legges til for %1$s. %2$s"
 
 #: shortcodes/mailjet-integration.php:20
 msgid "Email address"
-msgstr "Adresse électronique"
+msgstr "E-postadresse"
 
 #: shortcodes/mailjet-integration.php:21
+#, fuzzy
 msgid "I agree to the processing of my personal data for advertising purposes and to receive e-mail for advertising purposes. I can revoke the given consent at any time with effect for the future in any appropriate form."
-msgstr "Je consens au traitement de mes données personnelles à des fins publicitaires et à la réception d'e-mails à des fins publicitaires. Je peux révoquer à tout moment le consentement donné avec effet pour l'avenir sous toute forme appropriée."
+msgstr "Jeg samtykker til behandling av min personlige data og mottak av e-post i reklameøyemed. Jeg kan trekke tilbake samtykket når som helst med fremtidig innvirkning i ethvert passende skjema."
 
 #: shortcodes/mailjet-integration.php:22
 msgid "Subscribe"
-msgstr "S'abonner à"
+msgstr "Abonner"
