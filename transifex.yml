@@ -1,0 +1,7 @@
+git:
+  filters:
+    - filter_type: file
+      file_format: PO
+      source_file: languages/grandeljay-mailjet-integration.pot
+      source_language: en_GB
+      translation_files_expression: "languages/grandeljay-mailjet-integration-<lang>.po"
