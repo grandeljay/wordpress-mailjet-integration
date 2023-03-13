@@ -1,25 +1,29 @@
 # Blank WordPress Pot
 # Copyright 2014 ...
 # This file is distributed under the GNU General Public License v3 or later.
+# Translators:
+# Jay Trees, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Mailjet Integration v0.3.3\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2023-02-28 10:01+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Jay Trees <github.jay@grandel.anonaddy.me>\n"
-"Language-Team: Jay Trees <github.jay@grandel.anonaddy.me>\n"
-"Language: de_DE\n"
+"POT-Creation-Date: 2023-02-28 09:25+0100\n"
+"PO-Revision-Date: 2023-03-13 12:55+0000\n"
+"Last-Translator: Jay Trees, 2023\n"
+"Language-Team: German (Germany) (https://www.transifex.com/grandeljay/teams/164758/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
-"X-Poedit-Basepath: ../inc\n"
 "X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../inc\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
 
 #: ajax/subscribe.php:117
 msgid "Please confirm your email address."
@@ -113,29 +117,25 @@ msgstr "Kontakt-Eigenschaften können nicht hinzugefügt werden"
 #: hooks/wp.php:119
 #, php-format
 msgid "The below listed contact properties could not be added for %1$s. %2$s"
-msgstr "Die unten aufgeführten Kontakteigenschaften konnten für %1$s nicht hinzugefügt werden. %2$s"
+msgstr ""
+"Die unten aufgeführten Kontakteigenschaften konnten für %1$s nicht "
+"hinzugefügt werden. %2$s"
 
 #: shortcodes/mailjet-integration.php:20
 msgid "Email address"
 msgstr "E-Mail Adresse"
 
 #: shortcodes/mailjet-integration.php:21
-msgid "I agree to the processing of my personal data for advertising purposes and to receive e-mail for advertising purposes. I can revoke the given consent at any time with effect for the future in any appropriate form."
-msgstr "Ich bin mit der Verarbeitung meiner personenbezogenen Daten zu Werbezwecken und mit dem Erhalt von E-Mails zu Werbezwecken einverstanden. Ich kann die erteilte Einwilligung jederzeit mit Wirkung für die Zukunft in einer geeigneten Form widerrufen."
+msgid ""
+"I agree to the processing of my personal data for advertising purposes and "
+"to receive e-mail for advertising purposes. I can revoke the given consent "
+"at any time with effect for the future in any appropriate form."
+msgstr ""
+"Ich bin mit der Verarbeitung meiner personenbezogenen Daten zu Werbezwecken "
+"und mit dem Erhalt von E-Mails zu Werbezwecken einverstanden. Ich kann die "
+"erteilte Einwilligung jederzeit mit Wirkung für die Zukunft in einer "
+"geeigneten Form widerrufen."
 
 #: shortcodes/mailjet-integration.php:22
 msgid "Subscribe"
 msgstr "Abonnieren"
-
-#~ msgid "Newsletter subscription failed"
-#~ msgstr "Newsletter-Anmeldung fehlgeschlagen"
-
-#, php-format
-#~ msgid "The user %1$s tried to subscribe to your newsletter but couldn't due to an error. %2$s"
-#~ msgstr "Der Benutzer %1$s hat versucht, Ihren Newsletter zu abonnieren, konnte dies aber aufgrund eines Fehlers nicht tun. %2$s"
-
-#~ msgid "It seems like something went wrong. The administrator has been notified about the error."
-#~ msgstr "Es scheint, dass etwas schief gelaufen ist. Der Administrator wurde über den Fehler informiert."
-
-#~ msgid "It seems like something went wrong. The administrator could not be notified about the error."
-#~ msgstr "Es scheint, dass etwas schief gelaufen ist. Der Administrator konnte nicht über den Fehler informiert werden."
