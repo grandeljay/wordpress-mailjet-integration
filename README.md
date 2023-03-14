@@ -1,10 +1,14 @@
+<a href="https://hosted.weblate.org/engage/mailjet-integration/">
+<img src="https://hosted.weblate.org/widgets/mailjet-integration/-/mailjet-integration-pot/svg-badge.svg" alt="Oversettelsesstatus" />
+</a>
+
 # Integration for Mailjet
 
 A simple Mailjet integration for WordPress.
 
-Integration for Mailjet is like any other Mailjet integration. It's aiming to be simple, lightweight, robust and customizable.
+Integration for Mailjet unlike any other. Aims to be simple, lightweight, robust and customizable.
 
-If you have any questions, check out the [wiki](https://github.com/grandeljay/wordpress-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/wordpress-mailjet-integration/issues).
+Consultthe [wiki](https://github.com/grandeljay/wordpress-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/wordpress-mailjet-integration/issues) if you have questions.
 
 ## Getting started
 
@@ -39,11 +43,11 @@ So far the following variables are available and can be used in your transaction
 
 -   confirmationlink
 
-    The link to confirm a subscribers email address.
+    The link to confirm a subscribers e-mail address.
 
 -   approximatename
 
-    The subscribers name guessed, based on the email address. Currently the part before the `@` is used.
+    The subscribers name guessed, based on the e-mail address. Currently the part before the `@` is used.
 
     Example:
     john.doe@domain.tld would extract `john.doe` and use it to greet the subscriber.
@@ -64,6 +68,12 @@ Install dependencies with composer.
 ```
 composer install
 ```
+---
+
+And/or help translate the app on Hosted Weblate \
+<a href="https://hosted.weblate.org/engage/mailjet-integration/">
+<img src="https://hosted.weblate.org/widgets/mailjet-integration/-/mailjet-integration-pot/multi-blue.svg" alt="Translation status" />
+</a>
 
 ### Coding standard
 
