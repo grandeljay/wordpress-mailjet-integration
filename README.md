@@ -1,14 +1,12 @@
-<a href="https://hosted.weblate.org/engage/mailjet-integration/">
-<img src="https://hosted.weblate.org/widgets/mailjet-integration/-/mailjet-integration-pot/svg-badge.svg" alt="Oversettelsesstatus" />
-</a>
-
 # Integration for Mailjet
+
+[![Oversettelsesstatus](https://hosted.weblate.org/widgets/mailjet-integration/-/mailjet-integration-pot/svg-badge.svg)](https://hosted.weblate.org/engage/mailjet-integration/)
 
 A simple Mailjet integration for WordPress.
 
 Integration for Mailjet unlike any other. Aims to be simple, lightweight, robust and customizable.
 
-Consultthe [wiki](https://github.com/grandeljay/wordpress-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/wordpress-mailjet-integration/issues) if you have questions.
+Consult the [wiki](https://github.com/grandeljay/wordpress-mailjet-integration/wiki) or open an [issue](https://github.com/grandeljay/wordpress-mailjet-integration/issues) if you have questions.
 
 ## Getting started
 
@@ -68,12 +66,12 @@ Install dependencies with composer.
 ```
 composer install
 ```
+
 ---
 
-And/or help translate the app on Hosted Weblate \
-<a href="https://hosted.weblate.org/engage/mailjet-integration/">
-<img src="https://hosted.weblate.org/widgets/mailjet-integration/-/mailjet-integration-pot/multi-blue.svg" alt="Translation status" />
-</a>
+And/or help translate the app on Hosted Weblate
+
+[![Translation status](https://hosted.weblate.org/widgets/mailjet-integration/-/mailjet-integration-pot/multi-blue.svg)](https://hosted.weblate.org/engage/mailjet-integration/)
 
 ### Coding standard
 
